@@ -1,11 +1,12 @@
-.first {
-  color:blue;
+body{
+  background-color: black;
 }
-.greed{
-  border: 15px green;
-  text-size-adjust: 50px;
+
+.container_hight{
+max-height: 60%;
+border: solid 5px green;
 }
-.root{
-  margin-top: 100px;
-  color: aqua;
+
+.container_low{
+
 }
