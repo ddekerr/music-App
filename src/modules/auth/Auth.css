@@ -1,7 +1,9 @@
 .registration{
-  background-color: aqua;
+  text-align: center;
+  background-color: black;
   position: absolute;
-  bottom: 50px;
+  bottom: 0px;
+  color: white;
 }
 
 .registration__list{

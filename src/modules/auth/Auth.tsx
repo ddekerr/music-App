@@ -12,15 +12,15 @@ function Auth() {
       <div className="registration__list">
         <div>
           <div><p>znak</p></div>
-          <div><p>slovo</p></div>
+          <div><p>Milions of sounds</p></div>
         </div>
-        <button type="button">knopk</button>
+        <button type="button">click here fore free sing up</button>
         <ul>
-          <li>google</li>
-          <li>face</li>
-          <li>ios</li>
+          <li>Continue with Google</li>
+          <li>Continue with Facebook</li>
+          <li>Continue with IOS</li>
         </ul>
-        <button type="button">knop</button>
+        <button type="button">Log in</button>
       </div>
     </div>
     </>
