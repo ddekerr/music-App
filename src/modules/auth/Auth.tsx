@@ -8,19 +8,19 @@ function Auth() {
 
     </div>
 
-    <div className="registration container">
-      <div className="registration__list">
-        <div>
-          <div><p>znak</p></div>
-          <div><p>slovo</p></div>
+    <div className="registration">
+      <div className="registration__list container">
+        <div className="">
+          <div className="sumbol"><img src={profile} alt="there should have been a picture but something went wrong, sorry(((" className="picture"/></div>
+          <div className="greeting"><p>Time to WORSHIP</p></div>
         </div>
-        <button type="button">knopk</button>
         <ul>
-          <li>google</li>
-          <li>face</li>
-          <li>ios</li>
+          <li className="with qlog">click here fore free sing up</li>
+          <li className="with">Continue with Google</li>
+          <li className="with">Continue with Facebook</li>
+          <li className="with">Continue with IOS</li>
+          <li className="with qlog">Log in</li>
         </ul>
-        <button type="button">knop</button>
       </div>
     </div>
     </>
