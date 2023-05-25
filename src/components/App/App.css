@@ -1,12 +1,16 @@
 body{
-  background-color: black;
+  background-image: url(../image/hightback.jpg);
+  height: 700px;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container_hight{
-max-height: 60%;
-border: solid 5px green;
+
 }
 
-.container_low{
-
+.znak{
+  height: 70px;
+  position: relative;
 }
