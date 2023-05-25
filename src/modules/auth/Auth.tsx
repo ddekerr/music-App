@@ -1,5 +1,5 @@
 import "./Auth.css";
-import profile from "../../image/pngegg.png";
+// import profile from "../../image/pngegg.png";
 
 function Auth() {
   return (

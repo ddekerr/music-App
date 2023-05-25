@@ -12,7 +12,6 @@ function App() {
       <Route path="/library" element={<Library />} />
     </Routes>
   );
-  // return <Auth />;
 }
 
 export default App;
