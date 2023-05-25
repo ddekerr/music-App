@@ -1,15 +1,12 @@
-body {
-  background-image: url(../../image/hightback.jpg);
-  height: 700px;
-  background-origin: border-box;
-  background-repeat: no-repeat;
-  background-size: cover;
+.registration{
+  background-color: aqua;
+  position: absolute;
+  bottom: 50px;
 }
 
-.container_hight {
-}
-
-.znak {
-  height: 70px;
-  position: relative;
+.registration__list{
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
