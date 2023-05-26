@@ -17,6 +17,7 @@ function Auth() {
             <p>Time to WORSHIP</p>
           </Greeting>
         </Logo>
+        
         <RegistrationList className=" container">
 
           <RegItem>
