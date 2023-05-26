@@ -58,6 +58,10 @@
   font-family: Roboto;
 }
 
+.song{
+  margin-bottom: 10px;
+}
+
 .songs__item:not(:last-of-type) {
   margin-bottom: 16px;
 }
@@ -76,20 +80,4 @@
 .song__action {
 }
 
-/* MENU */
-.menu {
-  position: absolute;
-  bottom: 0;
-  padding: 10px 0;
-  background-color: #000;
-}
 
-.menu__list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu__link {
-  color: #fff;
-}

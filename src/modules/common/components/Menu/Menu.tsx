@@ -1,4 +1,4 @@
-import { MenuContainer, MenuList, MenuLink } from "./Menu.styled";
+import { MenuContainer, MenuList, MenuLink, MenuText } from "./Menu.styled";
 import { HiHome, HiUser } from "react-icons/hi";
 import { VscLibrary } from "react-icons/vsc";
 
@@ -7,16 +7,22 @@ function Menu() {
     <MenuContainer>
       <MenuList className="container">
         <li>
-          <HiHome className="icon" />
-          <MenuLink to="/">Home</MenuLink>
+          <MenuLink to="/">
+            <HiHome className="icon" />
+            <MenuText>Home</MenuText>
+          </MenuLink>
         </li>
         <li>
-          <VscLibrary className="icon" />
-          <MenuLink to="/library">Library</MenuLink>
+          <MenuLink to="/library">
+            <VscLibrary className="icon" />
+            <MenuText>Library</MenuText>
+          </MenuLink>
         </li>
         <li>
-          <HiUser className="icon" />
-          <MenuLink to="#">Profile</MenuLink>
+          <MenuLink to="#">
+            <HiUser className="icon" />
+            <MenuText>Profile</MenuText>
+          </MenuLink>
         </li>
         <li>
           <MenuLink to="/auth">Auth</MenuLink>
