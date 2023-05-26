@@ -1,17 +1,13 @@
 import "./Home.css";
 import { Link } from "react-router-dom";
+import Filter from "modules/common/components/Filter/Filter";
+
 
 
 function Home() {
   return (
     <>
-    
-
-
-
-      <div>Home</div>
-      <Link to={"/library"}>Library</Link>
-      <Link to={"/auth"}>Auth</Link>
+    <Filter></Filter>
     </>
   );
 }

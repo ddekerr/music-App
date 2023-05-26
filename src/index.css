@@ -42,3 +42,8 @@ a {
   fill: #fff;
   width: 100%;
 }
+
+.is-active {
+  background-color: #f92457;
+  color: #fff;
+}
