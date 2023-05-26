@@ -2,7 +2,9 @@
   background-image: url("../../image/notka.png");
   height: 500px;
   background-repeat: no-repeat;
+  background-color: black;
 }
+
 
 .registration{
   position: fixed;
@@ -16,6 +18,7 @@
   left: 50%;
   transform: translate(-50%, 0);
   top: -150px;
+  align-content: center;
 }
 
 .registration__list{
@@ -34,6 +37,10 @@
   color: white;
 }
 
+.sumbol{
+  
+}
+
 .qlog{
   background-color: #F92457;
   border-radius: 30px;
@@ -42,10 +49,11 @@
 
 .with{
   color: white;
-  width: 100%;
+  width: 70%;
   font-size: 14px;
   line-height: 1.14;
   font-style: bold;
+  text-align: center;
 }
 
 .with:not(:last-of-type){
