@@ -17,8 +17,10 @@
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  top: -150px;
+  top: -100px;
   align-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .registration__list{
