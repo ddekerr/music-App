@@ -9,6 +9,12 @@ export const MenuContainer = styled.nav`
   padding: 10px 0;
 
   background-color: #000;
+
+  @media screen and (min-width: 768px) {
+    position: static;
+    background-color: transparent;
+    padding: 20px 0;
+  }
 `;
 
 export const MenuList = styled.ul`
@@ -22,8 +28,29 @@ export const MenuLink = styled(NavLink)`
   flex-direction: column;
 
   color: #fff;
+
+  transition-duration: 500ms;
+
+  :focus,
+  :hover {
+    transform: scale(1.1);
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 export const MenuText = styled.p`
-  margin-top: 5px;
+  @media screen and (max-width: 767px) {
+    margin-top: 5px;
+    font-size: 10px;
+    line-height: 1.14;
+  }
+  @media screen and (min-width: 768px) {
+    margin-left: 5px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
 `;
