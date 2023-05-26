@@ -42,7 +42,7 @@ export const RegistrationList = styled.ul`
 `
 
 export const RegLink = styled.a`
-    color: white;
+  color: white;
   width: 100%;
   font-size: 14px;
   line-height: 1.14;
@@ -61,7 +61,6 @@ export const RegData = styled.a`
   font-style: bold;
   text-align: center;
 `
-
 
 export const RegItem = styled.li`
   :not(:last-of-type){
