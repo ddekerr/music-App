@@ -1,5 +1,5 @@
 import Filter from "modules/common/components/Filter/Filter";
-import { Header, SearchField } from "./Library.styled";
+import { SongContainer, Header, SearchField } from "./Library.styled";
 import SongList from "./components/SongList";
 import "./Library.css";
 
@@ -18,9 +18,9 @@ function Library() {
         </div>
       </Header>
 
-      <main>
+      <SongContainer>
         <SongList />
-      </main>
+      </SongContainer>
       <div className="pop-up"></div>
     </>
   );

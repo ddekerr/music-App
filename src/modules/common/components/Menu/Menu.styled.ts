@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 
 export const MenuContainer = styled.nav`
-  position: absolute;
+  position: fixed;
   bottom: 0;
 
   width: 100%;

@@ -17,36 +17,6 @@
   color: #a0a0a0;
 }
 
-.filter__list {
-  flex-basis: 100%;
-  display: flex;
-  gap: 25px;
-
-  overflow: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.filter__list::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-
-.filter__button {
-  padding: 10px;
-  border: 0;
-  border-radius: 10px;
-  background-color: #e5e5e5;
-  color: #505050;
-  font-size: 18px;
-  line-height: 1.16;
-}
-
-.filter__button.is-active {
-  background-color: #f92457;
-  color: #fff;
-}
-
 /* SONG */
 
 .songs__item {
@@ -58,7 +28,7 @@
   font-family: Roboto;
 }
 
-.song{
+.song {
   margin-bottom: 10px;
 }
 
@@ -79,5 +49,3 @@
 
 .song__action {
 }
-
-

@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import { Song } from "./SongList.styled";
+import SongItem from "./SongItem";
 
 const songList = [
   { id: 1, title: "День у день", author: "Room for more" },
@@ -16,13 +16,7 @@ function SongList() {
   return (
     <ul className="container">
       {songList.map(({ title, author }) => (
-        <Song key={nanoid()}>
-          <div className="song">
-            <div className="song__title">{title}</div>
-            <div className="song__author">{author}</div>
-          </div>
-          <div className="action">...</div>
-        </Song>
+        <SongItem key={nanoid()} title={title} author={author} />
       ))}
     </ul>
   );

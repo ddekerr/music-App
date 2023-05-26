@@ -1,10 +1,5 @@
 import styled from "@emotion/styled";
 
-
-export const FilterContainer = styled.div`
-
-`;
-
 export const FilterList = styled.ul`
   flex-basis: 100%;
   display: flex;
@@ -13,15 +8,14 @@ export const FilterList = styled.ul`
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+
   ::-webkit-scrollbar {
     width: 0;
     height: 0;
   }
 `;
 
-export const FilterItem = styled.li`
-
-`;
+export const FilterItem = styled.li``;
 
 export const FilterButton = styled.button`
   padding: 10px;

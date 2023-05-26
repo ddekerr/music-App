@@ -18,8 +18,6 @@ export const SearchField = styled.input`
   background-color: #f4f4f4;
   color: #a0a0a0;
 `;
-export const SongContainer = styled.main``;
-
-
-
-
+export const SongContainer = styled.main`
+  padding-bottom: 70px;
+`;
