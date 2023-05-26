@@ -7,7 +7,7 @@ function Auth() {
   return (
     <>
       <div className="hero"></div>
-
+        <p>dima dima</p>
       <Registration>
         <div className="logo">
           <img src={profile} alt="cross" className="picture" />
