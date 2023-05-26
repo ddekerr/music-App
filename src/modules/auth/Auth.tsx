@@ -1,37 +1,45 @@
 import "./Auth.css";
 import profile from "../../image/pngegg.png";
 import fonim from "../../image/555.jpg";
-import { Registration } from "./Auth.styled";
+import { Registration, Hero, Logo, Picture, Greeting, RegistrationList, RegLink, RegData, RegItem} from "./Auth.styled";
+
 
 function Auth() {
   return (
     <>
-      <div className="hero"></div>
-        <p>dima dima</p>
+      <Hero>
+      </Hero>
+
       <Registration>
-        <div className="logo">
-          <img src={profile} alt="cross" className="picture" />
-          <div className="greeting">
+        <Logo>
+          <Picture src={profile} alt="cross"/>
+          <Greeting>
             <p>Time to WORSHIP</p>
-          </div>
-        </div>
-        <ul className="registration__list container">
-          <li className="with qlog">
-            <a href="#">click here fore free sing up</a>
-          </li>
-          <li className="with">
-            <a href="#">Continue with Google</a>
-          </li>
-          <li className="with">
-            <a href="#">Continue with Facebook</a>
-          </li>
-          <li className="with">
-            <a href="#">Continue with IOS</a>
-          </li>
-          <li className="with qlog">
-            <a href="#">Log in</a>
-          </li>
-        </ul>
+          </Greeting>
+        </Logo>
+        <RegistrationList className=" container">
+
+          <RegItem>
+            <RegData href="#" >click here fore free sing up</RegData>
+          </RegItem>
+
+          <RegItem>
+            <RegLink href="#" >Continue with Google</RegLink>
+          </RegItem>
+
+          <RegItem>
+            <RegLink href="#" >Continue with Facebook</RegLink>
+          </RegItem>
+
+          <RegItem>
+            <RegLink href="#" >Continue with IOS</RegLink>
+          </RegItem>
+
+          <RegItem>
+            <RegData href="#" >Log in</RegData>
+          </RegItem>
+          
+        </RegistrationList>
       </Registration>
     </>
   );

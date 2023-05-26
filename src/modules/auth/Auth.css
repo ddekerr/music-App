@@ -1,61 +1,36 @@
 .hero{
-  background-image: url("../../image/notka.png");
-  height: 500px;
-  background-repeat: no-repeat;
-  background-color: black;
+
 }
 
 
 .registration{
-  position: fixed;
-  bottom: 0;
-  padding-bottom: 40px;
-  background-color: black;
+
 }
 
 .logo{
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  top: -100px;
-  align-content: center;
-  display: flex;
-  justify-content: center;
+
 }
 
-/* ne plachj */
-
 .registration__list{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
+
 }
 
 .picture{
-  height: 50px;
+
 }
 
 .greeting{
-  color: white;
+
 }
 
 .qlog{
-  background-color: #F92457;
-  border-radius: 30px;
-  padding: 10px;
+
 }
 
 .with{
-  color: white;
-  width: 70%;
-  font-size: 14px;
-  line-height: 1.14;
-  font-style: bold;
-  text-align: center;
+
 }
 
 .with:not(:last-of-type){
-  margin-bottom: 20px;
+
 }
