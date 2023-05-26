@@ -1,7 +1,6 @@
 import Filter from "modules/common/components/Filter/Filter";
 import { SongContainer, Header, SearchField } from "./Library.styled";
 import SongList from "./components/SongList";
-import "./Library.css";
 
 function Library() {
   return (

@@ -1,5 +1,11 @@
-import { Song } from "./SongList.styled";
+import {
+  SongItemContainer,
+  SongTitle,
+  SongAuthor,
+  ActionButton,
+} from "./SongList.styled";
 import { FC } from "react";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 interface ISong {
   title: string;
@@ -8,13 +14,15 @@ interface ISong {
 
 const SongItem: FC<ISong> = ({ title, author }) => {
   return (
-    <Song className="songs__item">
-      <div className="song">
-        <div className="song__title">{title}</div>
-        <div className="song__author">{author}</div>
+    <SongItemContainer>
+      <div>
+        <SongTitle>{title}</SongTitle>
+        <SongAuthor>{author}</SongAuthor>
       </div>
-      <div className="action">...</div>
-    </Song>
+      <ActionButton>
+        <BsThreeDotsVertical />
+      </ActionButton>
+    </SongItemContainer>
   );
 };
 

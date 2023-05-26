@@ -12,7 +12,7 @@ const songList = [
   { id: 8, title: "Вільний", author: "Room for more" },
 ];
 
-function SongList() {
+const SongList = () => {
   return (
     <ul className="container">
       {songList.map(({ title, author }) => (
@@ -20,6 +20,6 @@ function SongList() {
       ))}
     </ul>
   );
-}
+};
 
 export default SongList;
