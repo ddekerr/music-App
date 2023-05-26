@@ -24,7 +24,7 @@ code {
 }
 
 [class*="container"] {
-  width: 320px;
+  min-width: 320px;
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -35,4 +35,10 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.icon {
+  font-size: 24px;
+  fill: #fff;
+  width: 100%;
 }

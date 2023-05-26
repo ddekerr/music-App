@@ -84,7 +84,7 @@ function Library() {
         </ul>
       </main>
 
-      <div className="menu">
+      {/* <div className="menu">
         <ul className="menu__list container">
           <li className="menu__item">
             <a className="menu__link" href="/">
@@ -107,7 +107,7 @@ function Library() {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
 
       <div className="pop-up"></div>
     </>
