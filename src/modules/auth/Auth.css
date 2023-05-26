@@ -22,6 +22,9 @@
   display: flex;
   justify-content: center;
 }
+.sumbol{
+  flex-grow: 1;
+}
 
 .registration__list{
   width: 100%;
