@@ -1,7 +1,8 @@
 .header {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  border-bottom: 0.5px solid #a0a0a0;
 }
 
 .search {
@@ -16,13 +17,79 @@
   color: #a0a0a0;
 }
 
-.filter__list{
+.filter__list {
   flex-basis: 100%;
   display: flex;
   gap: 25px;
+
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.filter__button{
-  max-height: 35px;
+.filter__list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
+.filter__button {
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #e5e5e5;
+  color: #505050;
+  font-size: 18px;
+  line-height: 1.16;
+}
+
+.filter__button.is-active {
+  background-color: #f92457;
+  color: #fff;
+}
+
+/* SONG */
+
+.songs__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #fff;
+  font-family: Roboto;
+}
+
+.songs__item:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
+.song__title {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.14;
+}
+
+.song__author {
+  font-size: 10px;
+  line-height: 1.14;
+}
+
+.song__action {
+}
+
+/* MENU */
+.menu {
+  position: absolute;
+  bottom: 0;
+  padding: 10px 0;
+  background-color: #000;
+}
+
+.menu__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu__link {
+  color: #fff;
+}
