@@ -1,19 +1,24 @@
 import "./Home.css";
 import { Link } from "react-router-dom";
 import Filter from "modules/common/components/Filter/Filter";
-
+import { Header, TitleList, TileContainer } from "./Home.styled";
+import TileList from "./components/TileList";
 
 
 function Home() {
   return (
     <>
-    <header className="header">
-      <p className="texthed">Worship Songs</p>
-    </header>
+    <Header>
+      <div className="container">
+        <TitleList>Worship Songs</TitleList>
+        <Filter/>
+      </div>
+        
+    </Header>
 
-    <Filter></Filter>
-
-    <div></div>
+    <TileContainer>
+      <TileList/>
+    </TileContainer>
     </>
   );
 }
