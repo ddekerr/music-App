@@ -17,7 +17,7 @@ function Home() {
     </Header>
 
     <TileContainer>
-      <TileList/>
+      <div className="container"><TileList/></div>
     </TileContainer>
     </>
   );
