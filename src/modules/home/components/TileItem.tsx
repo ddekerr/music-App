@@ -1,6 +1,5 @@
 import { FC } from "react";
-import { TileItemContainer } from "./TileList.styled";
-
+import { TileItemContainer, TileLinkName, TileLink } from "./TileList.styled";
 
 interface ITile {image:string; nametile:string}
 
@@ -9,10 +8,10 @@ const TileItem: FC <ITile> = ({image, nametile})=>{
 
   return(
     <TileItemContainer>
-    <a href="#">
+      <TileLink to= "#" >
         <img src={image} alt="foto"/>
-        <p>{nametile}</p>
-      </a>
+        <TileLinkName>{nametile}</TileLinkName>
+      </TileLink>
     </TileItemContainer>
   )
 }
