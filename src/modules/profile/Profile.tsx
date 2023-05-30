@@ -1,14 +1,14 @@
 import Filter from "modules/common/components/Filter/Filter";
-import {Header, ProfileInfo, ProfileListContainer} from "./Profile.styled";
+import {Header, ProfileListContainer} from "./Profile.styled";
+
+
 
 function Profile() {
   return (
     <>
       <Header>
         <div className="container">
-          <ProfileInfo>
           
-          </ProfileInfo>
         </div>
       </Header>
 
