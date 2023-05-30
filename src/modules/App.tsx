@@ -5,6 +5,7 @@ import Layout from "./common/components/Layout/Layout";
 const HomePage = lazy(() => import("./home/Home"));
 const LibraryPage = lazy(() => import("./library/Library"));
 const AuthPage = lazy(() => import("./auth/Auth"));
+const ProfilePage = lazy(() => import("./profile/Profile"));
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="auth" element={<AuthPage />} />
         <Route path="library" element={<LibraryPage />} />
+        <Route path="profile" element={<ProfilePage />} />
       </Route>
     </Routes>
   );

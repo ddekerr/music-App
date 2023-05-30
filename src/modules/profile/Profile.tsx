@@ -7,7 +7,7 @@ function Profile() {
       <Header>
         <div className="container">
           <ProfileInfo>
-
+          
           </ProfileInfo>
         </div>
       </Header>

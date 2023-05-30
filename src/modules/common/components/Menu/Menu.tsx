@@ -19,7 +19,7 @@ function Menu() {
           </MenuLink>
         </li>
         <li>
-          <MenuLink to="#">
+          <MenuLink to="/profile">
             <HiUser className="icon" />
             <MenuText>Profile</MenuText>
           </MenuLink>
