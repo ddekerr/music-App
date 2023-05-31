@@ -1,26 +1,18 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import {
-  GET_ALL,
-  GET_BY_ID,
-  ADD,
-  UPDATE_BY_ID,
-  REMOVE_BY_ID,
-} from "./constants";
-import Song from "models/Song";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-axios.defaults.baseURL = "https://songs-api-01v7.onrender.com/api";
+axios.defaults.baseURL = 'https://songs-api-01v7.onrender.com/api';
 
 /**
  * Get all songs
  * @return arr of objects
  */
-export const getAll = createAsyncThunk(GET_ALL, async (_, thunkAPI) => {
+export const getAll = createAsyncThunk('songs/getAll', async (_, thunkAPI) => {
   try {
-    const response = await axios.get("./songs");
+    const response = await axios.get('./songs');
     return response.data; // []
   } catch (error) {
-    let message = "Unknown Error";
+    let message = 'Unknown Error';
     if (error instanceof Error) message = error.message;
     return thunkAPI.rejectWithValue(message);
   }
@@ -32,13 +24,13 @@ export const getAll = createAsyncThunk(GET_ALL, async (_, thunkAPI) => {
  * @return object
  */
 export const getSongById = createAsyncThunk(
-  GET_BY_ID,
-  async (songId: string, thunkAPI) => {
+  'songs/getSongById',
+  async (songId, thunkAPI) => {
     try {
       const response = await axios.get(`./songs/${songId}`);
       return response.data; // {}
     } catch (error) {
-      let message = "Unknown Error";
+      let message = 'Unknown Error';
       if (error instanceof Error) message = error.message;
       return thunkAPI.rejectWithValue(message);
     }
@@ -51,13 +43,13 @@ export const getSongById = createAsyncThunk(
  * @return Object of new song
  */
 export const addSong = createAsyncThunk(
-  ADD,
-  async (newSong: Song, thunkAPI) => {
+  'songs/addSong',
+  async (newSong, thunkAPI) => {
     try {
-      const response = await axios.post("./songs");
+      const response = await axios.post('./songs', newSong);
       return response.data;
     } catch (error) {
-      let message = "Unknown Error";
+      let message = 'Unknown Error';
       if (error instanceof Error) message = error.message;
       return thunkAPI.rejectWithValue(message);
     }
@@ -69,8 +61,8 @@ export const addSong = createAsyncThunk(
  * params @
  */
 // export const updateSongById = createAsyncThunk(
-//   UPDATE_BY_ID,
-//   async (song: Song, thunkAPI) => {
+//   "songs/updateSongById",
+//   async (song, thunkAPI) => {
 //     try {
 //       const { id, title, author } = song;
 //       const response = await axios.put(`./songs/${id}`, {
@@ -92,13 +84,13 @@ export const addSong = createAsyncThunk(
  * @return remove Object
  */
 export const removeSongById = createAsyncThunk(
-  REMOVE_BY_ID,
-  async (songId: String, thunkAPI) => {
+  'songs/removeSongById',
+  async (songId, thunkAPI) => {
     try {
       const response = await axios.delete(`./songs/${songId}`);
       return response.data.result;
     } catch (error) {
-      let message = "Unknown Error";
+      let message = 'Unknown Error';
       if (error instanceof Error) message = error.message;
       return thunkAPI.rejectWithValue(message);
     }
