@@ -1,30 +1,23 @@
 // import Filter from "modules/common/components/Filter/Filter";
-import {
-  Header,
-  ProfileListContainer,
-  AvatarFoto,
-  UserName,
-} from "./Profile.styled";
-import UserFotoLink from "../../image/mat.jpg";
-import UserCab from "./components/UserCab";
+import { AvatarFoto, UserName } from './Profile.styled';
+import UserFotoLink from '../../image/mat.jpg';
+import UserActionList from './components/UserActionList';
+import Header from 'modules/common/components/Layout/Header';
+import Main from 'modules/common/components/Layout/Main';
 
-function Profile() {
+const Profile = () => {
   return (
     <>
       <Header>
-        <div className="container">
-          <AvatarFoto src={UserFotoLink} alt="UserFoto" />
-          <UserName>Martin Froibergh</UserName>
-        </div>
+        <AvatarFoto src={UserFotoLink} alt="UserFoto" />
+        <UserName>Martin Froibergh</UserName>
       </Header>
 
-      <ProfileListContainer>
-        <div className="container">
-          <UserCab />
-        </div>
-      </ProfileListContainer>
+      <Main>
+        <UserActionList />
+      </Main>
     </>
   );
-}
+};
 
 export default Profile;

@@ -1,4 +1,5 @@
-import { TileItemContainer, TileLinkName, TileLink } from "./TileList.styled";
+import PropTypes from 'prop-types';
+import { TileItemContainer, TileLinkName, TileLink } from './TileList.styled';
 
 const TileItem = ({ image, nametile }) => {
   return (
@@ -9,6 +10,11 @@ const TileItem = ({ image, nametile }) => {
       </TileLink>
     </TileItemContainer>
   );
+};
+
+TileItem.propTypes = {
+  image: PropTypes.string.isRequired,
+  nametile: PropTypes.string.isRequired,
 };
 
 export default TileItem;

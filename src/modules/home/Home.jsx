@@ -1,25 +1,23 @@
 // import { Link } from "react-router-dom";
-import Filter from "modules/common/components/Filter/Filter";
-import { Header, TitleList, TileContainer } from "./Home.styled";
-import TileList from "./components/TileList";
+import Filter from 'modules/common/components/Filter/Filter';
+import { TitleList } from './Home.styled';
+import TileList from './components/TileList';
+import Header from 'modules/common/components/Layout/Header';
+import Main from 'modules/common/components/Layout/Main';
 
-function Home() {
+const Home = () => {
   return (
     <>
       <Header>
-        <div className="container">
-          <TitleList>Worship Songs</TitleList>
-          <Filter />
-        </div>
+        <TitleList>Worship Songs</TitleList>
+        <Filter />
       </Header>
 
-      <TileContainer>
-        <div className="container">
-          <TileList />
-        </div>
-      </TileContainer>
+      <Main>
+        <TileList />
+      </Main>
     </>
   );
-}
+};
 
 export default Home;

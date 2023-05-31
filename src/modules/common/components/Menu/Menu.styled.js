@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const MenuContainer = styled.nav`
   position: fixed;
@@ -28,6 +28,7 @@ export const MenuLink = styled(NavLink)`
   flex-direction: column;
 
   color: #fff;
+  cursor: pointer;
 
   transition-duration: 500ms;
 

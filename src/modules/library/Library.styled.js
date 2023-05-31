@@ -1,11 +1,4 @@
-import styled from "@emotion/styled";
-
-export const Header = styled.header`
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 15px;
-  border-bottom: 0.5px solid #a0a0a0;
-`;
+import styled from '@emotion/styled';
 
 export const SearchField = styled.input`
   width: 100%;
@@ -17,7 +10,4 @@ export const SearchField = styled.input`
 
   background-color: #f4f4f4;
   color: #a0a0a0;
-`;
-export const SongContainer = styled.main`
-  padding-bottom: 70px;
 `;

@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
 import {
   SongItemContainer,
   SongTitle,
   SongAuthor,
   ActionButton,
-} from "./SongList.styled";
-import { BsThreeDotsVertical } from "react-icons/bs";
+} from './SongList.styled';
+import { BsThreeDotsVertical } from 'react-icons/bs';
 
 const SongItem = ({ title, author }) => {
   return (
@@ -18,6 +19,11 @@ const SongItem = ({ title, author }) => {
       </ActionButton>
     </SongItemContainer>
   );
+};
+
+SongItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
 };
 
 export default SongItem;

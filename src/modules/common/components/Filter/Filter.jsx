@@ -1,20 +1,20 @@
-import { nanoid } from "nanoid";
-import { FilterList, FilterButton } from "./Filter.styled";
+import { nanoid } from 'nanoid';
+import { FilterList, FilterButton, FilterItem } from './Filter.styled';
 
-const filters = ["Filter1", "Filter2", "Filter3"];
+const filters = ['Filter1', 'Filter2', 'Filter3'];
 
-function Filter() {
+const Filter = () => {
   return (
     <FilterList>
-      {filters.map((filter) => (
-        <li key={nanoid()} className="filter__item">
+      {filters.map(filter => (
+        <FilterItem key={nanoid()}>
           <FilterButton type="button" className="is-active">
             {filter}
           </FilterButton>
-        </li>
+        </FilterItem>
       ))}
     </FilterList>
   );
-}
+};
 
 export default Filter;

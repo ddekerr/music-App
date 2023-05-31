@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const FilterList = styled.ul`
   flex-basis: 100%;
@@ -21,8 +21,11 @@ export const FilterButton = styled.button`
   padding: 10px;
   border: 0;
   border-radius: 10px;
+
   background-color: #e5e5e5;
   color: #505050;
+  cursor: pointer;
+
   font-size: 18px;
   line-height: 1.16;
 `;

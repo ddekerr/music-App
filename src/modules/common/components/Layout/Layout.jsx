@@ -1,8 +1,8 @@
-import { Suspense } from "react";
-import { Outlet } from "react-router-dom";
-import Menu from "../Menu/Menu";
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
+import Menu from '../Menu/Menu';
 
-function Layout() {
+const Layout = () => {
   return (
     <>
       <Menu />
@@ -11,6 +11,6 @@ function Layout() {
       </Suspense>
     </>
   );
-}
+};
 
 export default Layout;
