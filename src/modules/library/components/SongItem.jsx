@@ -4,15 +4,9 @@ import {
   SongAuthor,
   ActionButton,
 } from "./SongList.styled";
-import { FC } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
-interface ISong {
-  title: string;
-  author: string;
-}
-
-const SongItem: FC<ISong> = ({ title, author }) => {
+const SongItem = ({ title, author }) => {
   return (
     <SongItemContainer>
       <div>
