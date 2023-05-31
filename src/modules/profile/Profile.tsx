@@ -1,15 +1,16 @@
 import Filter from "modules/common/components/Filter/Filter";
-import {Header, ProfileListContainer, FilterButton} from "./Profile.styled";
-import UserFotoLink from "../../image/amboy.png";
+import {Header, ProfileListContainer, FilterButton, AvatarFoto, UserName} from "./Profile.styled";
+import UserFotoLink from "../../image/mat.jpg";
 import UserCab from "./components/UserCab";
+
 
 function Profile() {
   return (
     <>
       <Header>
         <div className="container">
-          <img src={UserFotoLink} alt="UserFoto"/>
-          <h1>Martin Froibergh</h1>
+          <AvatarFoto src={UserFotoLink} alt="UserFoto"/>
+          <UserName>Martin Froibergh</UserName>
         </div>
       </Header>
 

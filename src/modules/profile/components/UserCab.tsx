@@ -1,5 +1,10 @@
 import { nanoid } from "nanoid";
-import { UserCabContainer } from "./UserCab,styled";
+import {
+  UserCabContainer,
+  PositionDoor,
+  DoorName,
+  DoorLink,
+} from "./UserCab.styled";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { SlNote, SlArrowRight } from "react-icons/sl";
 import { IoIosPeople } from "react-icons/io";
@@ -16,13 +21,13 @@ const UserCab = () => {
   return (
     <UserCabContainer>
       {doors.map(({ icon: Icon, text }) => (
-        <li>
-          <a href="#">
+        <PositionDoor>
+          <DoorLink to="#">
             <Icon />
-            <p>{text}</p>
+            <DoorName>{text}</DoorName>
             <SlArrowRight />
-          </a>
-        </li>
+          </DoorLink>
+        </PositionDoor>
       ))}
     </UserCabContainer>
   );
