@@ -1,11 +1,19 @@
+// React tools
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './modules/App';
+
+// Redux tools
 import { Provider } from 'react-redux';
 import { store } from './app/store';
-import App from './modules/App';
+
 import reportWebVitals from './reportWebVitals';
+
+// Styling
 import './index.css';
-import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import theme from './theme';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -13,7 +21,9 @@ const root = createRoot(container);
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
     </BrowserRouter>
   </Provider>
 );
