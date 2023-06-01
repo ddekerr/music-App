@@ -1,8 +1,8 @@
 import { Formik } from 'formik';
 import {
   AlbumFoto,
-  SongName,
-  NameAuthor,
+  SongNameField,
+  NameAuthorField,
   AddMP4,
   AddMP3,
   AddVers,
@@ -11,22 +11,29 @@ import {
   Submit,
 } from './SongsForm.styled';
 import SongFoto from '../../../image/plus.png';
+import { Box } from 'modules/common';
 
 const SongForm = () => {
   return (
-    <div>
-      <AlbumFoto src={SongFoto} alt="" />
-      <SongName></SongName>
-      <NameAuthor></NameAuthor>
-      <AddMP4></AddMP4>
-      <AddMP3></AddMP3>
-      <AddVers></AddVers>
-      <SongArea>
-        <NameArea></NameArea>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-      </SongArea>
-      <Submit></Submit>
-    </div>
+    <Formik>
+      <form>
+        <Box>
+          <AlbumFoto src={SongFoto} alt="" />
+          <Box>
+            <SongNameField />
+            <NameAuthorField />
+          </Box>
+        </Box>
+        <AddMP4></AddMP4>
+        <AddMP3></AddMP3>
+        <AddVers></AddVers>
+        <SongArea>
+          <NameArea>Verse</NameArea>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+        </SongArea>
+        <Submit></Submit>
+      </form>
+    </Formik>
   );
 };
 
