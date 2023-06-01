@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import profile from '../../image/pngegg.png';
 import {
   Registration,
@@ -13,7 +14,7 @@ import { registrationList } from 'constants/registrationList';
 
 function Auth() {
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <Background />
 
       <Registration>
@@ -32,7 +33,7 @@ function Auth() {
           ))}
         </RegistrationList>
       </Registration>
-    </>
+    </Suspense>
   );
 }
 
