@@ -19,12 +19,10 @@ function Auth() {
       <Registration>
         <Logo>
           <Picture src={profile} alt="cross" />
-          <Greeting>
-            <p>Time to WORSHIP</p>
-          </Greeting>
+          <Greeting>Time to WORSHIP</Greeting>
         </Logo>
 
-        <RegistrationList className="container">
+        <RegistrationList>
           {registrationList.map(({ href, text, isBtn }) => (
             <RegItem>
               <RegLink href={href} className={isBtn ? 'reg-button' : ''}>

@@ -3,26 +3,46 @@ import back from 'image/back-to-auth.jpg';
 
 export const Hero = styled.div`
   width: 100vw;
-  height: 75vh;
+  height: 100vh;
   background-image: url(${back});
-  background-position: center -100px;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 `;
 
 export const Registration = styled.div`
   position: fixed;
-  bottom: 0;
-
+  max-width: 400px;
   width: 100%;
 
   background-color: #000;
+
+  @media screen and (max-width: 479.98px) {
+    bottom: 0;
+  }
+
+  @media screen and (min-width: 480px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 50%;
+
+    background-color: rgba(65, 65, 65, 0.74);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.8px);
+  }
 `;
+
 export const Logo = styled.div`
-  position: absolute;
-  left: 50%;
-  top: -80px;
-  transform: translate(-50%, 0);
+  @media screen and (max-width: 480px) {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -100%);
+  }
 
   align-content: center;
   display: flex;
@@ -32,14 +52,23 @@ export const Logo = styled.div`
   border-top-left-radius: 10px;
 
   background-color: #000;
+
+  @media screen and (min-width: 480px) {
+    background-color: rgba(65, 65, 65, 0.74);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.8px);
+  }
 `;
 
 export const Picture = styled.img`
   height: 50px;
 `;
 
-export const Greeting = styled.div`
+export const Greeting = styled.p`
   color: white;
+  align-self: center;
 `;
 
 export const RegistrationList = styled.ul`
@@ -68,5 +97,9 @@ export const RegItem = styled.li`
   min-width: 300px;
   :not(:last-of-type) {
     margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    min-width: 200px;
   }
 `;
