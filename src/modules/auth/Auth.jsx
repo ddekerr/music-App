@@ -22,10 +22,11 @@ function Auth() {
           <Greeting>Time to WORSHIP</Greeting>
         </Logo>
         <RegistrationList>
-          {registrationList.map(({ href, text, isBtn }) => (
+          {registrationList.map(({ href, text, isBtn, icon: Icon }) => (
             <RegItem>
               <RegLink to={href} className={isBtn ? 'reg-button' : ''}>
-                {text}
+                {Icon && <Icon style={{ marginRight: '10px' }} />}
+                <span>{text}</span>
               </RegLink>
             </RegItem>
           ))}

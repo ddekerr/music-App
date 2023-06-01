@@ -59,6 +59,7 @@ export const Logo = styled.div`
     left: 50%;
     top: 0;
     transform: translate(-50%, -100%);
+    font-size: 16px;
   }
 
   @media screen and (min-width: 480px) {
@@ -102,14 +103,28 @@ export const RegItem = styled.li`
 // ############### REG LINK ###################
 export const RegLink = styled(NavLink)`
   width: 100%;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
 
   color: white;
   cursor: pointer;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
 
   font-size: 16px;
   line-height: 1.16;
   font-weight: 500;
   text-align: center;
+
+  :hover:not(.reg-button),
+  :focus:not(.reg-button) {
+    transform: scale(1.1);
+  }
+
+  :hover.reg-button,
+  :focus.reg-button {
+    background-color: #333;
+  }
 `;
