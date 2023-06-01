@@ -1,15 +1,11 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const MainContainer = styled.main`
-  padding-bottom: 70px;
-`;
+import { Box } from '../Box/Box.styled';
 
 const Main = ({ children }) => {
   return (
-    <MainContainer>
+    <Box as="main" pb={{ _: 4, tablet: 0 }}>
       <div className="container">{children}</div>
-    </MainContainer>
+    </Box>
   );
 };
 
