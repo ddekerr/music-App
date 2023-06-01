@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './common/components/Layout/Layout';
 
@@ -17,7 +17,14 @@ function App() {
         <Route path="profile" element={<ProfilePage />} />
       </Route>
 
-      <Route path="/add-song" element={<AddSongPage />} />
+      <Route
+        path="/add-song"
+        element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <AddSongPage />
+          </Suspense>
+        }
+      />
       <Route path="/auth" element={<AuthPage />} />
     </Routes>
   );
