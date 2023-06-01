@@ -14,7 +14,7 @@ const operations = [getAll, getSongById, addSong, removeSongById];
 const getOperations = type => operations.map(operation => operation[type]);
 
 const initialState = {
-  songs: [],
+  items: [],
   activeSong: null,
   isLoading: false,
   error: null,

@@ -1,5 +1,6 @@
+// Handlers reducers
 export const handleGetAllFulfilled = (state, action) => {
-  state.songs = action.payload;
+  state.items = action.payload;
 };
 
 export const handleGetByIdFulfilled = (state, action) => {
@@ -7,12 +8,12 @@ export const handleGetByIdFulfilled = (state, action) => {
 };
 
 export const handleAdd = (state, action) => {
-  state.songs.push(action.payload);
+  state.items.push(action.payload);
 };
 
 export const handleRemoveById = (state, action) => {
-  const index = state.songs.findIndex(song => song._id === action.payload._id);
-  state.songs.splice(index, 1);
+  const index = state.items.findIndex(song => song._id === action.payload._id);
+  state.items.splice(index, 1);
 };
 
 export const handlePending = state => {
