@@ -1,7 +1,7 @@
 import profile from '../../image/pngegg.png';
 import {
   Registration,
-  Hero,
+  Background,
   Logo,
   Picture,
   Greeting,
@@ -14,18 +14,17 @@ import { registrationList } from 'constants/registrationList';
 function Auth() {
   return (
     <>
-      <Hero></Hero>
+      <Background />
 
       <Registration>
         <Logo>
           <Picture src={profile} alt="cross" />
           <Greeting>Time to WORSHIP</Greeting>
         </Logo>
-
         <RegistrationList>
           {registrationList.map(({ href, text, isBtn }) => (
             <RegItem>
-              <RegLink href={href} className={isBtn ? 'reg-button' : ''}>
+              <RegLink to={href} className={isBtn ? 'reg-button' : ''}>
                 {text}
               </RegLink>
             </RegItem>
