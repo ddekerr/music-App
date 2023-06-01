@@ -1,38 +1,71 @@
 import { Formik } from 'formik';
+import { useState } from 'react';
 import {
-  AlbumFoto,
-  SongNameField,
-  NameAuthorField,
-  AddMP4,
-  AddMP3,
+  AddSongForm,
+  UserImageUploadInput,
+  UserImageUploadLabel,
+  UserImageUploadContainer,
+  InputField,
+  AddButton,
   AddVers,
   SongArea,
   NameArea,
   Submit,
 } from './SongsForm.styled';
-import SongFoto from '../../../image/plus.png';
 import { Box } from 'modules/common';
+import userImageDefault from '../../../image/add-image.png';
 
 const SongForm = () => {
+  const [uploadedImage, setUploadedImage] = useState(null);
+
+  const handleChange = evt => {
+    setUploadedImage(evt.target.files[0]);
+  };
+
   return (
     <Formik>
-      <form>
-        <Box>
-          <AlbumFoto src={SongFoto} alt="" />
-          <Box>
-            <SongNameField />
-            <NameAuthorField />
+      <AddSongForm>
+        {/* HEADER BLOCK */}
+        <Box display="flex">
+          <UserImageUploadLabel htmlFor="file">
+            <UserImageUploadContainer
+              src={URL.createObjectURL(uploadedImage) || userImageDefault}
+            />
+            <UserImageUploadInput
+              type="file"
+              name="file"
+              id="file"
+              onChange={handleChange}
+            />
+          </UserImageUploadLabel>
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="space-evenly"
+          >
+            <InputField type="text" name="title" id="title" />
+            <InputField type="text" name="author" id="author" />
           </Box>
         </Box>
-        <AddMP4></AddMP4>
-        <AddMP3></AddMP3>
-        <AddVers></AddVers>
+
+        {/* ADD BUTTONS BLOCK */}
+        <Box display="flex" alignItems="center" justifyContent="flex-start">
+          <AddButton type="button">Add MP4</AddButton>
+          <AddButton type="button">Add MP3</AddButton>
+          <AddVers>
+            <option value="verse"></option>
+            <option value="chorus"></option>
+            <option value="bridge"></option>
+          </AddVers>
+        </Box>
+
+        {/* TEXT BLOCK */}
         <SongArea>
           <NameArea>Verse</NameArea>
           <textarea name="" id="" cols="30" rows="10"></textarea>
         </SongArea>
-        <Submit></Submit>
-      </form>
+        <Submit>Add Song</Submit>
+      </AddSongForm>
     </Formik>
   );
 };

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Box } from '../Box/Box.styled';
+import { Box } from 'modules/common';
 
 const Header = ({ children }) => {
   return (
