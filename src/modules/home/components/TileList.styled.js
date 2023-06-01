@@ -7,20 +7,22 @@ export const TileListContainer = styled.ul`
 `;
 
 export const TileItemContainer = styled.li`
-  flex-basis: calc((100% - 10px) / 2);
+  @media screen and (max-width: 479.98px) {
+    flex-basis: calc((100% - 10px) / 2);
 
-  :nth-of-type(2n + 1) {
-    margin-right: 10px;
+    :nth-of-type(2n + 1) {
+      margin-right: 10px;
+    }
+
+    :not(:nth-last-of-type(-n + 2)) {
+      margin-bottom: 10px;
+    }
   }
 
-  :not(:nth-last-of-type(-n + 2)) {
-    margin-bottom: 10px;
-  }
-
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 480px) and ((max-width: 767.98px)) {
     flex-basis: calc((100% - 20px) / 3);
 
-    :nth-of-type(3n) {
+    :not(:nth-of-type(3n)) {
       margin-right: 10px;
     }
 
@@ -29,10 +31,10 @@ export const TileItemContainer = styled.li`
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1279.98px) {
     flex-basis: calc((100% - 30px) / 4);
 
-    :nth-of-type(4n + 1) {
+    :not(:nth-of-type(4n)) {
       margin-right: 10px;
     }
 
