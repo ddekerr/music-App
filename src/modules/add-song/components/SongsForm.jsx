@@ -28,9 +28,7 @@ const SongForm = () => {
         {/* HEADER BLOCK */}
         <Box display="flex">
           <UserImageUploadLabel htmlFor="file">
-            <UserImageUploadContainer
-              src={URL.createObjectURL(uploadedImage) || userImageDefault}
-            />
+            <UserImageUploadContainer src={uploadedImage || userImageDefault} />
             <UserImageUploadInput
               type="file"
               name="file"
