@@ -3,14 +3,14 @@ import { Field, Form } from "formik";
 
 
 export const AlbumFoto = styled.img`
-  width: 100px;
+  height: 50px;
 `;
 
-export const SongName = styled.div`
+export const SongNameField = styled(Field)`
 
 `;
 
-export const NameAuthor = styled.div`
+export const NameAuthorField = styled(Field)`
 
 `;
 
