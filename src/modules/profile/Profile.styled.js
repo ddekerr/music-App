@@ -15,14 +15,14 @@ export const UserName = styled.p`
   color: white;
 `;
 
-export const FilterButton = styled.button`
-  padding: 10px;
-  border: 0;
-  border-radius: 10px;
+// export const FilterButton = styled.button`
+//   padding: 10px;
+//   border: 0;
+//   border-radius: 10px;
 
-  background-color: #e5e5e5;
-  color: #505050;
+//   background-color: #e5e5e5;
+//   color: #505050;
 
-  font-size: 18px;
-  line-height: 1.16;
-`;
+//   font-size: 18px;
+//   line-height: 1.16;
+// `;

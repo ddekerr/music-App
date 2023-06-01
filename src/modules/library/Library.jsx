@@ -1,8 +1,6 @@
-import Filter from 'modules/common/components/Filter/Filter';
 import { SearchField } from './Library.styled';
+import { Main, Header, Filter } from 'modules/common';
 import SongList from './components/SongList';
-import Header from 'modules/common/components/Layout/Header';
-import Main from 'modules/common/components/Layout/Main';
 
 function Library() {
   return (
@@ -20,7 +18,6 @@ function Library() {
       <Main>
         <SongList />
       </Main>
-      <div className="pop-up"></div>
     </>
   );
 }

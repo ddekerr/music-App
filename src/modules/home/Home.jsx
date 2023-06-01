@@ -1,15 +1,12 @@
-// import { Link } from "react-router-dom";
-import Filter from 'modules/common/components/Filter/Filter';
-import { TitleList } from './Home.styled';
+// import { TitleList } from './Home.styled';
+import { Main, Header, Filter } from 'modules/common';
 import TileList from './components/TileList';
-import Header from 'modules/common/components/Layout/Header';
-import Main from 'modules/common/components/Layout/Main';
 
 const Home = () => {
   return (
     <>
       <Header>
-        <TitleList>Worship Songs</TitleList>
+        {/* <TitleList>Worship Songs</TitleList> */}
         <Filter />
       </Header>
 

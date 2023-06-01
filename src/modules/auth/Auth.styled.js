@@ -1,37 +1,46 @@
-import styled from "@emotion/styled";
-import bacim from "../../image/notka.png"
+import styled from '@emotion/styled';
+import back from 'image/back-to-auth.jpg';
 
 export const Hero = styled.div`
-  background-image: url(${bacim});
-  height: 500px;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(${back});
+  background-position: center -100px;
   background-repeat: no-repeat;
-  
-`
+  background-size: cover;
+`;
 
 export const Registration = styled.div`
   position: fixed;
   bottom: 0;
-  padding-bottom: 40px;
-  background-color: black;
+
   width: 100%;
-`
+
+  background-color: #000;
+`;
 export const Logo = styled.div`
   position: absolute;
   left: 50%;
+  top: -80px;
   transform: translate(-50%, 0);
-  top: -100px;
+
   align-content: center;
   display: flex;
   justify-content: center;
-`
+  padding: 20px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+  background-color: #000;
+`;
 
 export const Picture = styled.img`
   height: 50px;
-`
+`;
 
 export const Greeting = styled.div`
   color: white;
-`
+`;
 
 export const RegistrationList = styled.ul`
   width: 100%;
@@ -39,31 +48,25 @@ export const RegistrationList = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-`
+  padding-top: 20px;
+  padding-bottom: 20px;
+`;
 
 export const RegLink = styled.a`
-  color: white;
   width: 100%;
-  font-size: 14px;
-  line-height: 1.14;
-  font-style: bold;
-  text-align: center;
-`
+  display: block;
 
-export const RegData = styled.a`
-  background-color: #F92457;
-  border-radius: 30px;
-  padding: 10px;
   color: white;
-  width: 100%;
+
   font-size: 14px;
   line-height: 1.14;
   font-style: bold;
   text-align: center;
-`
+`;
 
 export const RegItem = styled.li`
-  :not(:last-of-type){
+  min-width: 300px;
+  :not(:last-of-type) {
     margin-bottom: 20px;
   }
-`
+`;

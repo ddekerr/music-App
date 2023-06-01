@@ -16,6 +16,17 @@ export const TileItemContainer = styled.li`
   :not(:nth-last-of-type(-n + 2)) {
     margin-bottom: 10px;
   }
+  @media screen and (min-width: 480px) {
+    flex-basis: calc((100% - 20px) / 3);
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 30px) / 4);
+  }
+
+  @media screen and (min-width: 1280px) {
+    flex-basis: calc((100% - 50px) / 6);
+  }
 `;
 
 export const TileLinkName = styled.p`

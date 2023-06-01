@@ -1,9 +1,8 @@
-// import Filter from "modules/common/components/Filter/Filter";
 import { AvatarFoto, UserName } from './Profile.styled';
+import { Main, Header } from 'modules/common';
+import { UserActionList } from './components';
+
 import UserFotoLink from '../../image/mat.jpg';
-import UserActionList from './components/UserActionList';
-import Header from 'modules/common/components/Layout/Header';
-import Main from 'modules/common/components/Layout/Main';
 
 const Profile = () => {
   return (

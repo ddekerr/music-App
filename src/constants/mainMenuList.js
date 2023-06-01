@@ -18,8 +18,8 @@ export const mainMenuList = [
     icon: HiUser,
   },
   {
-    href: 'auth',
-    text: 'Home',
+    href: '/auth',
+    text: 'Auth',
     icon: HiUser,
   },
 ];
