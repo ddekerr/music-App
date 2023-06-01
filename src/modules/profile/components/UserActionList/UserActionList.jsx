@@ -11,10 +11,10 @@ import { userActionList } from 'constants/userActionList';
 const UserActionList = () => {
   return (
     <UserActionListContainer>
-      {userActionList.map(({ icon: ActionIcon, text, href }) => (
+      {userActionList.map(({ icon: ActionIcon, text, href, iconColor }) => (
         <ActionItem key={nanoid()}>
           <ActionLink to={href}>
-            <ActionIcon />
+            <ActionIcon style={{fill: iconColor}}/>
             <ActionText>{text}</ActionText>
             <RiArrowRightSLine />
           </ActionLink>

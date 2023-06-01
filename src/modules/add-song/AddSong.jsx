@@ -6,7 +6,7 @@ import SongForm from './components/SongsForm';
 
 const AddSong = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <>
       <BackLink>
         <BsArrowLeft />
         <p>Go Back</p>
@@ -15,7 +15,7 @@ const AddSong = () => {
       <Main>
         <SongForm />
       </Main>
-    </Suspense>
+    </>
   );
 };
 

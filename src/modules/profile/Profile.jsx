@@ -1,4 +1,4 @@
-import { AvatarFoto, UserName } from './Profile.styled';
+import { AvatarFoto, UserName, FatherBoxHead } from './Profile.styled';
 import { Main, Header } from 'modules/common';
 import { UserActionList } from './components';
 
@@ -8,8 +8,10 @@ const Profile = () => {
   return (
     <>
       <Header>
+        <FatherBoxHead>
         <AvatarFoto src={UserFotoLink} alt="UserFoto" />
         <UserName>Martin Froibergh</UserName>
+        </FatherBoxHead>
       </Header>
 
       <Main>
