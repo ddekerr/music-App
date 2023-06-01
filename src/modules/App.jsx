@@ -6,6 +6,7 @@ const HomePage = lazy(() => import('./home/Home'));
 const LibraryPage = lazy(() => import('./library/Library'));
 const AuthPage = lazy(() => import('./auth/Auth'));
 const ProfilePage = lazy(() => import('./profile/Profile'));
+const AddSongPage = lazy(() => import('./add-song/AddSong'));
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="library" element={<LibraryPage />} />
         <Route path="profile" element={<ProfilePage />} />
       </Route>
+
+      <Route path="/add-song" element={<AddSongPage />} />
       <Route path="/auth" element={<AuthPage />} />
     </Routes>
   );

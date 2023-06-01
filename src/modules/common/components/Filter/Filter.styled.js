@@ -4,15 +4,6 @@ export const FilterList = styled.ul`
   flex-basis: 100%;
   display: flex;
   gap: 25px;
-
-  overflow: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  ::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
 `;
 
 export const FilterItem = styled.li``;

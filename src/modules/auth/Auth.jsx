@@ -1,7 +1,8 @@
+import { Suspense } from 'react';
 import profile from '../../image/pngegg.png';
 import {
   Registration,
-  Hero,
+  Background,
   Logo,
   Picture,
   Greeting,
@@ -13,26 +14,26 @@ import { registrationList } from 'constants/registrationList';
 
 function Auth() {
   return (
-    <>
-      <Hero></Hero>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Background />
 
       <Registration>
         <Logo>
           <Picture src={profile} alt="cross" />
           <Greeting>Time to WORSHIP</Greeting>
         </Logo>
-
         <RegistrationList>
-          {registrationList.map(({ href, text, isBtn }) => (
+          {registrationList.map(({ href, text, isBtn, icon: Icon }) => (
             <RegItem>
-              <RegLink href={href} className={isBtn ? 'reg-button' : ''}>
-                {text}
+              <RegLink to={href} className={isBtn ? 'reg-button' : ''}>
+                {Icon && <Icon style={{ marginRight: '10px' }} />}
+                <span>{text}</span>
               </RegLink>
             </RegItem>
           ))}
         </RegistrationList>
       </Registration>
-    </>
+    </Suspense>
   );
 }
 

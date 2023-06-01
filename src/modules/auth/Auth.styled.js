@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import back from 'image/back-to-auth.jpg';
+import { NavLink } from 'react-router-dom';
 
-export const Hero = styled.div`
+// ############### BACKGROUND ###################
+export const Background = styled.div`
   width: 100vw;
   height: 100vh;
   background-image: url(${back});
@@ -9,13 +11,14 @@ export const Hero = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 `;
-
+// ############### REGISTRATION ###################
 export const Registration = styled.div`
   position: fixed;
-  max-width: 400px;
   width: 100%;
+  max-width: 768px;
 
-  background-color: #000;
+  background-color: rgba(65, 65, 65, 0.74);
+  backdrop-filter: blur(5.8px);
 
   @media screen and (max-width: 479.98px) {
     bottom: 0;
@@ -27,38 +30,40 @@ export const Registration = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 50%;
+    width: 80%;
 
-    background-color: rgba(65, 65, 65, 0.74);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.8px);
+  }
+  @media screen and (min-width: 7680px) {
+    width: 50%;
   }
 `;
-
+// ############### LOGO ###################
 export const Logo = styled.div`
-  @media screen and (max-width: 480px) {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -100%);
-  }
-
-  align-content: center;
   display: flex;
+  align-content: center;
   justify-content: center;
   padding: 20px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 
-  background-color: #000;
+  background-color: rgba(65, 65, 65, 0.74);
+  backdrop-filter: blur(5.8px);
+  color: #fff;
+
+  font-size: 24px;
+
+  @media screen and (max-width: 479.98px) {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -100%);
+    font-size: 16px;
+  }
 
   @media screen and (min-width: 480px) {
-    background-color: rgba(65, 65, 65, 0.74);
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.8px);
   }
 `;
 
@@ -67,39 +72,59 @@ export const Picture = styled.img`
 `;
 
 export const Greeting = styled.p`
-  color: white;
   align-self: center;
+  text-align: center;
 `;
 
+// ############### REGISTRATION LIST ###################
 export const RegistrationList = styled.ul`
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-top: 20px;
-  padding-bottom: 20px;
-`;
-
-export const RegLink = styled.a`
   width: 100%;
-  display: block;
-
-  color: white;
-
-  font-size: 14px;
-  line-height: 1.14;
-  font-style: bold;
-  text-align: center;
+  padding: 30px;
 `;
 
+// ############### REG ITEM ###################
 export const RegItem = styled.li`
-  min-width: 300px;
+  width: 100%;
+
   :not(:last-of-type) {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 480px) {
     min-width: 200px;
+    width: 50%;
+  }
+`;
+
+// ############### REG LINK ###################
+export const RegLink = styled(NavLink)`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  color: white;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+
+  font-size: 16px;
+  line-height: 1.16;
+  font-weight: 500;
+  text-align: center;
+
+  :hover:not(.reg-button),
+  :focus:not(.reg-button) {
+    transform: scale(1.1);
+  }
+
+  :hover.reg-button,
+  :focus.reg-button {
+    background-color: #333;
   }
 `;

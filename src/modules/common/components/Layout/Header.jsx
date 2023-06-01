@@ -1,18 +1,11 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const HeaderContainer = styled.header`
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 15px;
-  border-bottom: 0.5px solid #a0a0a0;
-`;
+import { Box } from '../Box/Box.styled';
 
 const Header = ({ children }) => {
   return (
-    <HeaderContainer>
+    <Box as="header" pb={2} pt={2} mb={2} borderBottom={0}>
       <div className="container">{children}</div>
-    </HeaderContainer>
+    </Box>
   );
 };
 
