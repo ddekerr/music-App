@@ -1,9 +1,9 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import back from 'image/back-to-auth.jpg';
 
 export const Hero = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 75vh;
   background-image: url(${back});
   background-position: center -100px;
   background-repeat: no-repeat;

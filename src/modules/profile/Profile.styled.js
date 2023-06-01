@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export const AvatarFoto = styled.img`
   height: 100px;

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export const FilterList = styled.ul`
   flex-basis: 100%;

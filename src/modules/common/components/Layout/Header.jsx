@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
   padding-top: 20px;
