@@ -46,7 +46,7 @@ export const TileItemContainer = styled.li`
   @media screen and (min-width: 1280px) {
     flex-basis: calc((100% - 50px) / 6);
 
-    :nth-of-type(6n + 1) {
+    :not(:nth-of-type(6n)) {
       margin-right: 10px;
     }
 
