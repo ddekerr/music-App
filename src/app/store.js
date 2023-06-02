@@ -10,7 +10,8 @@ import { configureStore } from '@reduxjs/toolkit';
 //   REGISTER,
 // } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
-import { songsReducer } from './songs/songSlice';
+import { songsReducer } from './songs/slice';
+import { authReducer } from './auth/slice';
 
 // const middleware = [
 //   ...getDefaultMiddleware({
@@ -30,6 +31,7 @@ import { songsReducer } from './songs/songSlice';
 export const store = configureStore({
   reducer: {
     songs: songsReducer,
+    auth: authReducer,
   },
   // middleware,
 });
