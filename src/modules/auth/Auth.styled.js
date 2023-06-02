@@ -83,7 +83,6 @@ export const RegistrationList = styled.ul`
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  padding: 30px;
 `;
 
 // ############### REG ITEM ###################
