@@ -8,21 +8,18 @@ import {
   Picture,
   Greeting,
   RegistrationList,
-  RegLink,
   RegItem,
 } from './Auth.styled';
 import { registrationList } from 'constants';
 import { RegistrationForm, RegistrationLink } from './components';
 import { Box } from 'modules/common';
-import { RiContactsBookLine } from 'react-icons/ri';
 
 function Auth() {
   const [buttonText, setButtonText] = useState('');
 
   const handleClick = evt => {
     evt.preventDefault();
-    console.log(evt.target.innerText);
-    setButtonText(evt.target.innerHTML);
+    setButtonText(evt.target.innerText);
   };
 
   return (
@@ -37,11 +34,14 @@ function Auth() {
         <Box p={3}>
           <RegistrationForm />
           <RegistrationList>
-            {registrationList.map(link => (
-              <RegItem key={nanoid()}>
-                <RegistrationLink link={link} click={handleClick} />
-              </RegItem>
-            ))}
+            {registrationList.map(
+              link =>
+                buttonText !== link.text && (
+                  <RegItem key={nanoid()}>
+                    <RegistrationLink link={link} click={handleClick} />
+                  </RegItem>
+                )
+            )}
           </RegistrationList>
         </Box>
       </Registration>

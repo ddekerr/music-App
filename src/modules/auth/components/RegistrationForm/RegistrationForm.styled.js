@@ -5,6 +5,7 @@ export const RegistrationFormContainer = styled(Form)`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 20px;
 `;
 
 export const RegistrationLabel = styled.label`

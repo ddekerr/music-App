@@ -8,7 +8,7 @@ const RegistrationLink = ({
     <RegistratioLinkContainer
       to={href}
       className={isBtn ? 'reg-button' : ''}
-      onClick={() => click}
+      onClick={click}
     >
       {Icon && <Icon style={{ marginRight: '10px' }} />}
       <span>{text}</span>
