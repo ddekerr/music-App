@@ -1,12 +1,11 @@
 import { nanoid } from 'nanoid';
 import { FilterList, FilterButton, FilterItem } from './Filter.styled';
-
-const filters = ['Filter1', 'Filter2', 'Filter3'];
+import { filterList } from 'constants';
 
 const Filter = () => {
   return (
     <FilterList>
-      {filters.map(filter => (
+      {filterList.map(filter => (
         <FilterItem key={nanoid()}>
           <FilterButton type="button" className="is-active">
             {filter}

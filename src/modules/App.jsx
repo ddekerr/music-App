@@ -1,6 +1,9 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Layout from './common/components/Layout/Layout';
+import { useDispatch } from 'react-redux';
+import { refresh } from 'app/auth/operations';
+
+import { MainLayout } from '../modules/common';
 
 const HomePage = lazy(() => import('./home/Home'));
 const LibraryPage = lazy(() => import('./library/Library'));
@@ -9,9 +12,15 @@ const ProfilePage = lazy(() => import('./profile/Profile'));
 const AddSongPage = lazy(() => import('./add-song/AddSong'));
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refresh());
+  }, [dispatch]);
+
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path="library" element={<LibraryPage />} />
         <Route path="profile" element={<ProfilePage />} />

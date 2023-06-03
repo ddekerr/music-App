@@ -2,16 +2,15 @@
 import { Main, Header, Filter } from 'modules/common';
 import TileList from './components/TileList';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getAll } from 'app/songs/operations';
-import { getSongs, getIsLoading } from 'app/songs/selectors';
 import { Puff } from 'react-loader-spinner';
+import { useSongs } from 'app/hooks';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const songs = useSelector(getSongs);
-  const isLoading = useSelector(getIsLoading);
+  const { songs, isLoading } = useSongs();
 
   useEffect(() => {
     dispatch(getAll());

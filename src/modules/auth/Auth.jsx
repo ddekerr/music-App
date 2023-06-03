@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import profile from '../../image/pngegg.png';
 import {
   Registration,
@@ -11,11 +11,20 @@ import {
   RegLink,
   RegItem,
 } from './Auth.styled';
-import { registrationList } from 'constants/registrationList';
-import RegistrationForm from './components/RegistrationForm';
+import { registrationList } from 'constants';
+import { RegistrationForm, RegistrationLink } from './components';
 import { Box } from 'modules/common';
+import { RiContactsBookLine } from 'react-icons/ri';
 
 function Auth() {
+  const [buttonText, setButtonText] = useState('');
+
+  const handleClick = evt => {
+    evt.preventDefault();
+    console.log(evt.target.innerText);
+    setButtonText(evt.target.innerHTML);
+  };
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Background />
@@ -28,12 +37,9 @@ function Auth() {
         <Box p={3}>
           <RegistrationForm />
           <RegistrationList>
-            {registrationList.map(({ href, text, isBtn, icon: Icon }) => (
+            {registrationList.map(link => (
               <RegItem key={nanoid()}>
-                <RegLink to={href} className={isBtn ? 'reg-button' : ''}>
-                  {Icon && <Icon style={{ marginRight: '10px' }} />}
-                  <span>{text}</span>
-                </RegLink>
+                <RegistrationLink link={link} click={handleClick} />
               </RegItem>
             ))}
           </RegistrationList>

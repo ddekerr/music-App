@@ -19,7 +19,10 @@ export const RegistrationLabel = styled.label`
 export const RegistrationInput = styled(Field)`
   display: block;
   width: 100%;
-  padding: 7px 80px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  padding-left: 80px;
   border: solid 1px #fff;
   border-radius: 10px;
 

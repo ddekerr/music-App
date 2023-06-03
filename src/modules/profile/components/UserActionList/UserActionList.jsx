@@ -6,7 +6,7 @@ import {
   ActionLink,
 } from './UserActionList.styled';
 import { RiArrowRightSLine } from 'react-icons/ri';
-import { userActionList } from 'constants/userActionList';
+import { userActionList } from 'constants';
 
 const UserActionList = () => {
   return (
@@ -14,7 +14,7 @@ const UserActionList = () => {
       {userActionList.map(({ icon: ActionIcon, text, href, iconColor }) => (
         <ActionItem key={nanoid()}>
           <ActionLink to={href}>
-            <ActionIcon style={{fill: iconColor}}/>
+            <ActionIcon style={{ fill: iconColor }} />
             <ActionText>{text}</ActionText>
             <RiArrowRightSLine />
           </ActionLink>

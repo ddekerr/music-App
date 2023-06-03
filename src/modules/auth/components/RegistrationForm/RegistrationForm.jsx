@@ -7,6 +7,9 @@ import {
 } from './RegistrationForm.styled';
 import { Box } from 'modules/common';
 
+import { useDispatch } from 'react-redux';
+import { register } from 'app/auth/operations';
+
 const initialValues = {
   name: '',
   email: '',
@@ -14,15 +17,17 @@ const initialValues = {
 };
 
 const RegistrationForm = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
+    dispatch(register(values));
     resetForm();
     return;
   };
 
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-      <RegistrationFormContainer autoComplete="off">
+      <RegistrationFormContainer>
         <Box position="relative">
           <RegistrationLabel htmlFor="name">Name:</RegistrationLabel>
           <RegistrationInput id="name" name="name" type="text" required />

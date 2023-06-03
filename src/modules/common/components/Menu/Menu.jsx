@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import { MenuContainer, MenuList, MenuLink, MenuText } from './Menu.styled';
-import { mainMenuList } from 'constants/mainMenuList';
+import { mainMenuList } from 'constants';
 
 const Menu = () => {
   return (

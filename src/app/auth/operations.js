@@ -2,7 +2,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://songs-api-01v7.onrender.com/api';
+axios.defaults.baseURL = 'https://songs-api-01v7.onrender.com/api/';
+// axios.defaults.baseURL = 'http://localhost:3001/api/';
 
 // Utility to add JWT
 const setAuthHeader = token => {
@@ -22,7 +23,7 @@ export const register = createAsyncThunk(
   'auth/register',
   async (data, thunkAPI) => {
     try {
-      const response = await axios.post('/auth/register', data);
+      const response = await axios.post('auth/register', data);
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
@@ -59,22 +60,25 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 });
 
 /**
- * POST /auth/current
+ * POST /auth/refresh
  * headers: Authorization: Bearer token
  */
-export const refresh = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
-  const state = thunkAPI.getState();
-  const persistedToken = state.auth.token;
+export const refresh = createAsyncThunk(
+  '/auth/refresh',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
 
-  if (persistedToken === null) {
-    return thunkAPI.rejectWithValue('Unable to fetch user');
-  }
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue('Unable to fetch user');
+    }
 
-  try {
-    setAuthHeader(persistedToken);
-    const response = await axios.post('/auth/current');
-    return response.data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    try {
+      setAuthHeader(persistedToken);
+      const response = await axios.post('/auth/refresh');
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
-});
+);
