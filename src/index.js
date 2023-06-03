@@ -5,8 +5,9 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './modules/App';
 
 // Redux tools
+import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
+import { persistor, store } from './app/store';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -20,11 +21,13 @@ const root = createRoot(container);
 
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
-    </BrowserRouter>
+    <PersistGate loading={null} persistor={persistor}>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
+      </BrowserRouter>
+    </PersistGate>
   </Provider>
 );
 

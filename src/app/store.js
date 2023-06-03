@@ -1,39 +1,39 @@
-import { configureStore } from '@reduxjs/toolkit';
-// import {
-//   persistStore,
-//   persistReducer,
-//   FLUSH,
-//   REHYDRATE,
-//   PAUSE,
-//   PERSIST,
-//   PURGE,
-//   REGISTER,
-// } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import { songsReducer } from './songs/slice';
 import { authReducer } from './auth/slice';
 
-// const middleware = [
-//   ...getDefaultMiddleware({
-//     serializableCheck: {
-//       ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-//     },
-//   }),
-// ];
+const middleware = [
+  ...getDefaultMiddleware({
+    serializableCheck: {
+      ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }),
+];
 
 // Persisting token field from auth slice to localstorage
-// const authPersistConfig = {
-//   key: 'auth',
-//   storage,
-//   whitelist: [],
-// };
+const authPersistConfig = {
+  key: 'auth',
+  storage,
+  whitelist: [],
+};
 
 export const store = configureStore({
   reducer: {
     songs: songsReducer,
-    auth: authReducer,
+    auth: persistReducer(authPersistConfig, authReducer),
   },
-  // middleware,
+  middleware,
 });
 
-// export const persistor = persistStore(store);
+export const persistor = persistStore(store);

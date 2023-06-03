@@ -25,7 +25,14 @@ function App() {
           </Suspense>
         }
       />
-      <Route path="/auth" element={<AuthPage />} />
+      <Route
+        path="/auth"
+        element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <AuthPage />
+          </Suspense>
+        }
+      />
     </Routes>
   );
 }
