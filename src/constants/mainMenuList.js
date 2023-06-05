@@ -17,9 +17,4 @@ export const mainMenuList = [
     text: 'Profile',
     icon: HiUser,
   },
-  {
-    href: '/auth',
-    text: 'Auth',
-    icon: HiUser,
-  },
 ];

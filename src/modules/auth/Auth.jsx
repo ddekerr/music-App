@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
-import { Suspense, useState, createContext } from 'react';
+import { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import profile from '../../image/pngegg.png';
 import {
   Registration,
@@ -14,10 +15,12 @@ import { registrationList } from 'constants';
 import { RegistrationForm, RegistrationLink, LoginForm } from './components';
 import { Box } from 'modules/common';
 import { Context } from 'app/hooks/context';
+import { useAuth } from 'app/hooks';
 
 function Auth() {
   const [buttonText, setButtonText] = useState('');
   const [form, setForm] = useState('');
+  const { isLoggedIn } = useAuth();
 
   const handleClick = async evt => {
     evt.preventDefault();
@@ -33,33 +36,33 @@ function Auth() {
     }
   };
 
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Context.Provider value={{ handleClose }}>
-        <Background />
+  return isLoggedIn ? (
+    <Navigate to="/" />
+  ) : (
+    <Context.Provider value={{ handleClose }}>
+      <Background />
 
-        <Registration>
-          <Logo>
-            <Picture src={profile} alt="cross" />
-            <Greeting>Time to WORSHIP</Greeting>
-          </Logo>
-          <Box p={3}>
-            {form === 'Log In' && <LoginForm />}
-            {form === 'Sing up' && <RegistrationForm />}
-            <RegistrationList>
-              {registrationList.map(
-                link =>
-                  buttonText !== link.text && (
-                    <RegItem key={nanoid()}>
-                      <RegistrationLink link={link} click={handleClick} />
-                    </RegItem>
-                  )
-              )}
-            </RegistrationList>
-          </Box>
-        </Registration>
-      </Context.Provider>
-    </Suspense>
+      <Registration>
+        <Logo>
+          <Picture src={profile} alt="cross" />
+          <Greeting>Time to WORSHIP</Greeting>
+        </Logo>
+        <Box p={3}>
+          {form === 'Log In' && <LoginForm />}
+          {form === 'Sing up' && <RegistrationForm />}
+          <RegistrationList>
+            {registrationList.map(
+              link =>
+                buttonText !== link.text && (
+                  <RegItem key={nanoid()}>
+                    <RegistrationLink link={link} click={handleClick} />
+                  </RegItem>
+                )
+            )}
+          </RegistrationList>
+        </Box>
+      </Registration>
+    </Context.Provider>
   );
 }
 
