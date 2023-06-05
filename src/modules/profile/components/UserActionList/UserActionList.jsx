@@ -8,13 +8,13 @@ import {
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { userActionList } from 'constants';
 import { useDispatch } from 'react-redux';
-import { refresh } from 'app/auth/operations';
+import { logout } from 'app/auth/operations';
 
 const UserActionList = () => {
   const dispatch = useDispatch();
 
   const handleLogOut = () => {
-    dispatch(refresh());
+    dispatch(logout());
   };
 
   return (
