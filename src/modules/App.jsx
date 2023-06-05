@@ -10,6 +10,7 @@ const LibraryPage = lazy(() => import('./library/Library'));
 const AuthPage = lazy(() => import('./auth/Auth'));
 const ProfilePage = lazy(() => import('./profile/Profile'));
 const AddSongPage = lazy(() => import('./add-song/AddSong'));
+const SongPage = lazy(() => import('./song/Song'));
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function App() {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path="library" element={<LibraryPage />} />
+        <Route path="library/:id" element={<SongPage />} />
         <Route
           path="profile"
           element={

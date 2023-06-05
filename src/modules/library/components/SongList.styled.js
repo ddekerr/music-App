@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SongItemContainer = styled.li`
   display: flex;
@@ -11,18 +11,6 @@ export const SongItemContainer = styled.li`
   :not(:last-of-type) {
     margin-bottom: 10px;
   }
-`;
-
-export const SongTitle = styled.p`
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.14;
-`;
-
-export const SongAuthor = styled.p`
-  font-size: 10px;
-  line-height: 1.14;
-  font-weight: 400;
 `;
 
 export const ActionButton = styled.button`
