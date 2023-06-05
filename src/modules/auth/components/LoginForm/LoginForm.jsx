@@ -8,31 +8,36 @@ import {
 import { Box } from 'modules/common';
 
 import { useDispatch } from 'react-redux';
-import { register } from 'app/auth/operations';
+import { login } from 'app/auth/operations';
+import { useContext, useEffect } from 'react';
+import { Context } from 'app/hooks/context';
 
 const initialValues = {
-  name: '',
   email: '',
   password: '',
 };
 
 const LoginForm = () => {
   const dispatch = useDispatch();
+  const { handleClose } = useContext(Context);
 
   const handleSubmit = (values, { resetForm }) => {
-    dispatch(register(values));
+    dispatch(login(values));
     resetForm();
     return;
   };
 
+  useEffect(() => {
+    document.addEventListener('click', handleClose);
+
+    return () => {
+      document.removeEventListener('click', handleClose);
+    };
+  });
+
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
       <LoginFormContainer>
-        <Box position="relative">
-          <LoginLabel htmlFor="name">Name:</LoginLabel>
-          <LoginInput id="name" name="name" type="text" required />
-        </Box>
-
         <Box position="relative">
           <LoginLabel htmlFor="email">E-mail:</LoginLabel>
           <LoginInput id="email" name="email" type="email" required />
@@ -43,7 +48,7 @@ const LoginForm = () => {
           <LoginInput id="password" name="password" type="password" required />
         </Box>
 
-        <LoginButton type="submit">Sign Up</LoginButton>
+        <LoginButton type="submit">Log In</LoginButton>
       </LoginFormContainer>
     </Formik>
   );

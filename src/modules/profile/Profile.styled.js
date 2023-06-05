@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 
-
-export const FatherBoxHead = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
 export const AvatarFoto = styled.img`
   height: 100px;
   border-radius: 30px;

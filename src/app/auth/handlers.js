@@ -8,6 +8,7 @@ export const handlerLoginFulfilled = (state, action) => {
   state.user = action.payload.user;
   state.token = action.payload.token;
   state.isLoggedIn = true;
+  console.log(state.user);
 };
 
 export const handlerLogoutFulfilled = state => {
@@ -17,7 +18,7 @@ export const handlerLogoutFulfilled = state => {
 };
 
 export const handlerRefreshFulfilled = (state, action) => {
-  state.user = action.payload;
+  state.user = action.payload.user;
   state.isLoggedIn = true;
   state.isRefreshing = false;
 };

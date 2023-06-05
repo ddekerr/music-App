@@ -15,5 +15,5 @@ export const registrationList = [
   //   icon: FaFacebook,
   // },
   // { href: '/ios-api', text: 'Continue with IOS', isBtn: false, icon: FaApple },
-  { href: '/login', text: 'Log in', isBtn: true, icon: null },
+  { href: '/login', text: 'Log In', isBtn: true, icon: null },
 ];

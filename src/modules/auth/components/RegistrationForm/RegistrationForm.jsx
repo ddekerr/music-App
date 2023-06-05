@@ -9,6 +9,8 @@ import { Box } from 'modules/common';
 
 import { useDispatch } from 'react-redux';
 import { register } from 'app/auth/operations';
+import { useContext, useEffect } from 'react';
+import { Context } from 'app/hooks/context';
 
 const initialValues = {
   name: '',
@@ -18,6 +20,15 @@ const initialValues = {
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
+  const { handleClose } = useContext(Context);
+
+  useEffect(() => {
+    document.addEventListener('click', handleClose);
+
+    return () => {
+      document.removeEventListener('click', handleClose);
+    };
+  });
 
   const handleSubmit = (values, { resetForm }) => {
     dispatch(register(values));
