@@ -11,6 +11,7 @@ import {
   SongArea,
   NameArea,
   Submit,
+  SongText,
 } from './SongsForm.styled';
 import { Box } from 'modules/common';
 import userImageDefault from '../../../image/add-image.png';
@@ -60,9 +61,11 @@ const SongForm = () => {
         {/* TEXT BLOCK */}
         <SongArea>
           <NameArea>Verse</NameArea>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <SongText name="" id="" as="textarea"></SongText>
         </SongArea>
-        <Submit>Add Song</Submit>
+        <Box display="flex" justifyContent="flex-end">
+          <Submit>Save</Submit>
+        </Box>
       </AddSongForm>
     </Formik>
   );
