@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { refresh } from 'app/auth/operations';
 
-import { MainLayout } from '../modules/common';
+import { MainLayout, PrivateRoute, RestrictedRoute } from '../modules/common';
 
 const HomePage = lazy(() => import('./home/Home'));
 const LibraryPage = lazy(() => import('./library/Library'));
@@ -23,7 +23,12 @@ function App() {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path="library" element={<LibraryPage />} />
-        <Route path="profile" element={<ProfilePage />} />
+        <Route
+          path="profile"
+          element={
+            <PrivateRoute component={<ProfilePage />} redirectTo="/auth" />
+          }
+        />
       </Route>
 
       <Route
@@ -37,9 +42,13 @@ function App() {
       <Route
         path="/auth"
         element={
-          <Suspense fallback={<div>Loading...</div>}>
-            <AuthPage />
-          </Suspense>
+          <RestrictedRoute
+            component={
+              <Suspense fallback={<div>Loading...</div>}>
+                <AuthPage />
+              </Suspense>
+            }
+          ></RestrictedRoute>
         }
       />
     </Routes>
