@@ -12,6 +12,9 @@ import {
   NameArea,
   Submit,
   SongText,
+  AddChords,
+  TransformText,
+  ChoiceChord,
 } from './SongsForm.styled';
 import { Box } from 'modules/common';
 import userImageDefault from '../../../image/add-image.png';
@@ -63,7 +66,33 @@ const SongForm = () => {
         <SongArea>
           <NameArea>Verse</NameArea>
           <SongText name="" id="" as="textarea"></SongText>
+          {/* transform area in the text */}
+          <AddChords>
+            <ChoiceChord>+</ChoiceChord>
+          </AddChords>
+          <TransformText>
+            <p>Вся земля cхилилася</p>
+          </TransformText>
+          <AddChords>
+            <ChoiceChord>+</ChoiceChord>
+          </AddChords>
+          <TransformText>
+            <p>Втомлена від боротьби</p>
+          </TransformText>
+          <AddChords>
+            <ChoiceChord>+</ChoiceChord>
+          </AddChords>
+          <TransformText>
+            <p>Зітхаємо у марноті</p>
+          </TransformText>
+          <AddChords>
+            <ChoiceChord>+</ChoiceChord>
+          </AddChords>
+          <TransformText>
+            <p>Бо втратили ми Твій дотик</p>
+          </TransformText>
         </SongArea>
+
         <Box display="flex" justifyContent="flex-end">
           <Submit>Save</Submit>
         </Box>

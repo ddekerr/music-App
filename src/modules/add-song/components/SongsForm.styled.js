@@ -23,7 +23,6 @@ export const UserImageUploadLabel = styled.label`
   display: flex;
   justify-content: center;
   align-items: center;
-
   border-radius: 50%;
   margin-right: 20px;
 
@@ -60,6 +59,18 @@ export const NameArea = styled.p`
 export const SongText = styled(Field)`
   width: 100%;
   height: 200px;
+`;
+
+export const AddChords =styled.div`
+`;
+
+export const ChoiceChord = styled.button`
+  border-radius: 30px;
+  padding: 0px 5px;
+`;
+
+export const TransformText = styled.div`
+  color: white;
 `;
 
 export const Submit = styled.button`
