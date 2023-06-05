@@ -4,7 +4,7 @@ const theme = {
   },
 
   space: [0, 4, 16, 32, 64],
-  sizes: {},
+  sizes: ["100%"],
   radii: {},
   borders: ['0.5px solid #a0a0a0'],
 

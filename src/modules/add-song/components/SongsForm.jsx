@@ -41,6 +41,7 @@ const SongForm = () => {
             display="flex"
             flexDirection="column"
             justifyContent="space-evenly"
+            width={0}
           >
             <InputField type="text" name="title" id="title" />
             <InputField type="text" name="author" id="author" />
@@ -48,7 +49,7 @@ const SongForm = () => {
         </Box>
 
         {/* ADD BUTTONS BLOCK */}
-        <Box display="flex" alignItems="center" justifyContent="flex-start">
+        <Box display="flex" alignItems="center" justifyContent="space-between">
           <AddButton type="button">Add MP4</AddButton>
           <AddButton type="button">Add MP3</AddButton>
           <AddVers>

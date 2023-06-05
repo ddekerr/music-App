@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import { Field, Form } from 'formik';
 import { display } from 'styled-system';
 
-export const AddSongForm = styled(Form)``;
+export const AddSongForm = styled(Form)`
+  margin-top: 15px;
+`;
 
 export const UserImageUploadInput = styled(Field)`
   position: absolute;
@@ -21,8 +23,7 @@ export const UserImageUploadLabel = styled.label`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
+
   border-radius: 50%;
   margin-right: 20px;
 
@@ -37,9 +38,15 @@ export const InputField = styled(Field)``;
 
 export const AddButton = styled.button`
   margin-right: 10px;
+  border-radius: 30px;
+  padding: 2px 7px;
+  margin-top: 15px;
 `;
 
-export const AddVers = styled.select``;
+export const AddVers = styled.select`
+  flex-grow: 1;
+  margin-top: 15px;
+`;
 
 export const SongArea = styled.div`
   margin-top: 15px;
