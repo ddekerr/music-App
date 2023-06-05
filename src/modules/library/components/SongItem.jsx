@@ -4,7 +4,8 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 import { Text, Box } from 'modules/common';
 import { NavLink } from 'react-router-dom';
 
-const SongItem = ({ title, author, _id }) => {
+const SongItem = ({ song: { title, author, _id } }) => {
+  // console.log(_id);
   return (
     <SongItemContainer>
       <NavLink to={`${_id}`}>
