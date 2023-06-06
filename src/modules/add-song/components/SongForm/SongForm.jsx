@@ -1,5 +1,5 @@
 import { Formik } from 'formik';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   AddSongForm,
   UserImageUploadInput,
@@ -18,42 +18,31 @@ import { nanoid } from 'nanoid';
 
 const SongForm = () => {
   const [uploadedImage, setUploadedImage] = useState(null);
+  const [isVisualAddList, setIsVisualAddList] = useState(false);
+
   const [editableText, setEditableText] = useState({});
-  const [textBlockList, setTextBlockList] = useState([]);
-
-  const handleChange = evt => {
-    setUploadedImage(evt.target.files[0]);
-  };
-
-  const handleBlur = evt => {
-    const { name, value } = evt.target;
-    setEditableText(prevState => ({ ...prevState, [name]: value }));
-  };
+  const [currentlyEdited, setCurrentlyEdited] = useState('');
 
   const selectOption = evt => {
-    setTextBlockList(prevState => {
-      const { value } = evt.target;
-      const countIncludes = prevState.reduce(
+    const { innerText: value } = evt.target;
+    setEditableText(prevState => {
+      const countIncludes = Object.keys(prevState).reduce(
         (result, item) => (item.includes(value) ? (result += 1) : result),
         0
       );
-      return [...prevState, value + (countIncludes + 1)];
+      return { ...prevState, [value + (countIncludes + 1)]: '' };
     });
+    setIsVisualAddList(false);
   };
 
   return (
-    <Formik>
+    <Formik initialValues={editableText}>
       <AddSongForm>
         {/* HEADER BLOCK */}
         <Box display="flex">
           <UserImageUploadLabel htmlFor="file">
             <UserImageUploadContainer src={uploadedImage || userImageDefault} />
-            <UserImageUploadInput
-              type="file"
-              name="file"
-              id="file"
-              onChange={handleChange}
-            />
+            <UserImageUploadInput type="file" name="file" id="file" />
           </UserImageUploadLabel>
           <Box
             display="flex"
@@ -70,33 +59,35 @@ const SongForm = () => {
         <Box display="flex" alignItems="center" justifyContent="flex-end">
           <AddButton type="button">Add MP4</AddButton>
           <AddButton type="button">Add MP3</AddButton>
-          <Box flexGrow="1">
-            <Text>Add</Text>
-            <ul className="visually-hidden">
+          <Box flexGrow="1" position="relative">
+            <Text
+              color="white"
+              style={{ cursor: 'pointer' }}
+              onClick={() => setIsVisualAddList(true)}
+            >
+              Add
+            </Text>
+            <Box
+              as="ul"
+              position="absolute"
+              className={isVisualAddList ? '' : 'visually-hidden'}
+            >
               {partOfSongList.map(part => (
                 <li key={nanoid()}>
-                  <button type="button">{part}</button>
+                  <button type="button" name={part} onClick={selectOption}>
+                    {part}
+                  </button>
                 </li>
               ))}
-            </ul>
+            </Box>
           </Box>
-
-          {/* <AddTextAreaButton as="select" name="add" onClick={selectOption}>
-            <option value="intro">Intro</option>
-            <option value="verse">Verse</option>
-            <option value="chorus">Chorus</option>
-            <option value="bridge">Bridge</option>
-            <option value="outro">Outro</option>
-            <option value="outro">Instrumental</option>
-          </AddTextAreaButton> */}
         </Box>
 
         {/* TEXT BLOCK */}
-        <TextAreaBlock handleBlur={handleBlur} name="verse" />
-        <EditableTextBlock text={editableText} />
-
-        <TextAreaBlock handleBlur={handleBlur} name="chorus" />
-        {/* <EditableTextBlock text={editableText} /> */}
+        <Box>
+          <TextAreaBlock />
+          <EditableTextBlock />
+        </Box>
 
         <Box display="flex" justifyContent="flex-end">
           <Submit>Save</Submit>

@@ -4,14 +4,6 @@ import TileItem from './TileItem';
 import MalPeople from 'image/amboy.png';
 import { nanoid } from 'nanoid';
 
-// const tiles = [
-//   'Filter1',
-//   'Filter2',
-//   'Filter3',
-//   'Filter4',
-//   'Filter5',
-//   'Filter6',
-// ];
 
 const TileList = ({ songs }) => {
   return (

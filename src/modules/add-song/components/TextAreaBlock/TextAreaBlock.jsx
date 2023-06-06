@@ -1,11 +1,12 @@
 import { TextAreaContainer } from './TextAreaBlock.styled';
 import { Box, Text } from 'modules/common';
 
-export const TextAreaBlock = ({ handleBlur, name }) => {
+export const TextAreaBlock = () => {
   return (
     <Box mt={2}>
-      <Text color="white">Verse</Text>
-      <TextAreaContainer name={name} id="" as="textarea" onBlur={handleBlur} />
+      <Text color="white">Text</Text>
+      <TextAreaContainer as="textarea" />
+      <a href="#">Add</a>
     </Box>
   );
 };

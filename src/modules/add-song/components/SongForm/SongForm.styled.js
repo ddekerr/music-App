@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Field, Form } from 'formik';
 
 export const AddSongForm = styled(Form)`
-  margin-top: 15px;
+  
 `;
 
 export const UserImageUploadInput = styled(Field)`
