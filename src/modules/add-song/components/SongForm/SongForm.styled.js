@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Field, Form } from 'formik';
-import { display } from 'styled-system';
 
 export const AddSongForm = styled(Form)`
   margin-top: 15px;
@@ -39,38 +38,11 @@ export const AddButton = styled.button`
   margin-right: 10px;
   border-radius: 30px;
   padding: 2px 7px;
-  margin-top: 15px;
 `;
 
-export const AddVers = styled.select`
+export const AddTextAreaButton = styled(Field)`
   flex-grow: 1;
   margin-top: 15px;
-`;
-
-export const SongArea = styled.div`
-  margin-top: 15px;
-  padding: 0 15px;
-`;
-
-export const NameArea = styled.p`
-  color: white;
-`;
-
-export const SongText = styled(Field)`
-  width: 100%;
-  height: 200px;
-`;
-
-export const AddChords =styled.div`
-`;
-
-export const ChoiceChord = styled.button`
-  border-radius: 30px;
-  padding: 0px 5px;
-`;
-
-export const TransformText = styled.div`
-  color: white;
 `;
 
 export const Submit = styled.button`

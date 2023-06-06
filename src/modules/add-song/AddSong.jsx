@@ -1,15 +1,15 @@
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { Main } from 'modules/common';
 import { BackLink } from './AddSong.styled';
 import { BsArrowLeft } from 'react-icons/bs';
-import SongForm from './components/SongsForm';
+import { SongForm } from './components';
 import { Text } from 'modules/common';
 
 const AddSong = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <>
-      <BackLink to={navigate(-1)}>
+      <BackLink>
         <BsArrowLeft style={{ color: '#fff' }} />
         <Text color="white">Go Back</Text>
       </BackLink>
