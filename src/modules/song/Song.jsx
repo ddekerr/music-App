@@ -7,16 +7,20 @@ import {
   SongName,
   AlbumImage,
   ContainerMP3,
-  ContainerMP4,
   BorderVerse,
   NamedBox,
   TextBox,
+  YouTubeLink,
+  RowText,
+  TextHeader1,
+  TextHeader2,
 } from './Song.styled';
 import { BsArrowLeft } from 'react-icons/bs';
 import { Text } from 'modules/common';
-import { useNavigate } from 'react-router-dom';
 import AlbumFoto from '../../image/room.jpg';
-import { useEffect } from 'react';
+import YoutubeFoto from '../../image/youtu.jpg';
+import Zvuk from '../../image/zvuk.jpg';
+import { Box, Flex } from 'modules/common';
 
 const Song = () => {
   return (
@@ -26,22 +30,44 @@ const Song = () => {
         <Text color="white">Go Back</Text>
       </BackLink>
 
-      <ForThisSong>
-        <BandName>Room For More</BandName>
-        <SongName>Den y den</SongName>
-        <AlbumImage src={AlbumFoto} alt="" />
-      </ForThisSong>
+      <Box px={2}>
+        <ForThisSong>
+          <Flex display="flex">
+            <BandName>
+              <TextHeader1>Room For More</TextHeader1>
+            </BandName>
+            <SongName>
+              <TextHeader2>День у день</TextHeader2>
+            </SongName>
+          </Flex>
 
-      <MediaContainer>
-        <ContainerMP4></ContainerMP4>
-        <ContainerMP3></ContainerMP3>
-      </MediaContainer>
+          <Box ml={2}>
+            <AlbumImage src={AlbumFoto} alt="" />
+          </Box>
+        </ForThisSong>
 
-      <ContainerSong>
-        <BorderVerse></BorderVerse>
-        <NamedBox></NamedBox>
-        <TextBox></TextBox>
-      </ContainerSong>
+        <MediaContainer>
+          <Box mb={1}>
+            <YouTubeLink src={YoutubeFoto} alt="" />
+          </Box>
+          <Box mb={2}>
+            <ContainerMP3 src={Zvuk} />
+          </Box>
+        </MediaContainer>
+
+        <ContainerSong>
+          <NamedBox>ПРИСПІВ1:</NamedBox>
+          <BorderVerse>
+            <TextBox>
+              <RowText>День у день земля сповняється життям Твоїм</RowText>
+              <RowText>Bірність і добро тримають світ що Ти створив</RowText>
+              <RowText>День у день спасінню Твоєму радіємо</RowText>
+              <RowText>Милість і любов вкривають, оживляють знов</RowText>
+              <RowText>День у день</RowText>
+            </TextBox>
+          </BorderVerse>
+        </ContainerSong>
+      </Box>
     </>
   );
 };

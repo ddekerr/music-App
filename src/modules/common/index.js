@@ -10,6 +10,7 @@ export { default as Main } from './components/Layout/Main';
 // System Styled Boxes
 export { default as Box } from './components/Box/Box';
 export { default as Text } from './components/Box/Text';
+export { default as Flex } from './components/Box/Flex';
 
 // common Routes
 export { default as PrivateRoute } from './components/Routes/PrivateRoute';
