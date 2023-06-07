@@ -7,9 +7,20 @@ export const UserActionListContainer = styled.ul`
 
   font-size: 20px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1279.98px) {
     width: 30%;
     border-right: solid 1px #a0a0a0;
+
+    position: relative;
+    top: -200px; left: 500px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 30%;
+    border-right: solid 1px #a0a0a0;
+
+    position: relative;
+    top: -200px; left: 500px;
   }
 `;
 
