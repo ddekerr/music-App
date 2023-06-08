@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { MenuContainer, MenuList, MenuLink, MenuText } from './Menu.styled';
+import { MenuContainer, MenuList, MenuLink, MenuText, LiPadding } from './Menu.styled';
 import { mainMenuList } from 'constants';
 
 const Menu = () => {
@@ -7,12 +7,12 @@ const Menu = () => {
     <MenuContainer>
       <MenuList className="container">
         {mainMenuList.map(({ href, text, icon: MenuIcon }) => (
-          <li key={nanoid()}>
+          <LiPadding key={nanoid()}>
             <MenuLink to={href}>
               <MenuIcon className="icon" />
               <MenuText>{text}</MenuText>
             </MenuLink>
-          </li>
+          </LiPadding>
         ))}
       </MenuList>
     </MenuContainer>

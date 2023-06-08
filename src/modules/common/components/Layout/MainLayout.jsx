@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import {Flex, Menu, Logo} from 'modules/common';
+import { Flex, Menu, Logo } from 'modules/common';
 
 const MainLayout = () => {
   return (
     <>
       <Flex>
-        <Logo/>
+        <Logo />
         <Menu />
       </Flex>
 

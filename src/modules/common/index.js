@@ -1,6 +1,7 @@
 // Common Components
 export { default as Menu } from './components/Menu/Menu';
 export { default as Filter } from './components/Filter/Filter';
+export { default as Logo } from './components/Logo/Logo';
 
 // common Layouts
 export { default as MainLayout } from './components/Layout/MainLayout';

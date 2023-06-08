@@ -21,6 +21,26 @@ export const MenuList = styled.ul`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    padding-top: 15px;
+  }
+`;
+
+export const LiPadding = styled.li`
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    :nth-child(1) {
+      left: 25px;
+    }
+    :nth-child(2) {
+      left: 140px;
+    }
+    :nth-child(3) {
+      right: 15px;
+    }
+  }
 `;
 
 export const MenuLink = styled(NavLink)`
