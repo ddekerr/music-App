@@ -1,7 +1,6 @@
-import styled from "styled-components";
-import { Field } from "formik";
+import styled from 'styled-components';
 
-export const TextAreaContainer = styled(Field)`
+export const TextArea = styled.textarea`
   width: 100%;
   height: 200px;
 `;

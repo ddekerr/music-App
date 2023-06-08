@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 import { Field, Form } from 'formik';
 
-export const AddSongForm = styled(Form)`
-  
-`;
+export const AddSongForm = styled.form``;
 
-export const UserImageUploadInput = styled(Field)`
+export const UserImageUploadInput = styled.input`
   position: absolute;
   width: 1px;
   height: 1px;
@@ -32,7 +30,7 @@ export const UserImageUploadContainer = styled.img`
   width: 100%;
 `;
 
-export const InputField = styled(Field)``;
+// export const InputField = styled(Field)``;
 
 export const AddButton = styled.button`
   margin-right: 10px;
@@ -40,7 +38,7 @@ export const AddButton = styled.button`
   padding: 2px 7px;
 `;
 
-export const AddTextAreaButton = styled(Field)`
+export const AddTextAreaButton = styled.select`
   flex-grow: 1;
   margin-top: 15px;
 `;
