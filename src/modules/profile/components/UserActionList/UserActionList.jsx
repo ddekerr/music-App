@@ -9,6 +9,7 @@ import { RiArrowRightSLine } from 'react-icons/ri';
 import { userActionList } from 'constants';
 import { useDispatch } from 'react-redux';
 import { logout } from 'app/auth/operations';
+import { Box } from 'modules/common';
 
 const UserActionList = () => {
   const dispatch = useDispatch();
@@ -19,19 +20,20 @@ const UserActionList = () => {
 
   return (
     <UserActionListContainer>
-      {userActionList.map(({ icon: ActionIcon, text, href, iconColor }) => (
-        <ActionItem key={nanoid()}>
-          <ActionLink
-            to={href}
-            onClick={text === 'Log Out' ? handleLogOut : ''}
-          >
-            <ActionIcon style={{ fill: iconColor }} />
-            <ActionText>{text}</ActionText>
-            <RiArrowRightSLine />
-          </ActionLink>
-        </ActionItem>
-      ))}
-    </UserActionListContainer>
+    {userActionList.map(({ icon: ActionIcon, text, href, iconColor }) => (
+      <ActionItem key={nanoid()}>
+        <ActionLink
+          to={href}
+          onClick={text === 'Log Out' ? handleLogOut : ''}
+        >
+          <ActionIcon style={{ fill: iconColor }} />
+          <ActionText>{text}</ActionText>
+          <RiArrowRightSLine />
+        </ActionLink>
+      </ActionItem>
+    ))}
+  </UserActionListContainer>
+    
   );
 };
 
