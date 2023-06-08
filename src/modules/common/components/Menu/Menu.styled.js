@@ -24,7 +24,8 @@ export const MenuList = styled.ul`
 
   @media screen and (min-width: 768px) {
     display: flex;
-    padding-top: 15px;
+    padding-top: 30px;
+    padding-bottom: 10px;
   }
 `;
 
@@ -32,13 +33,13 @@ export const LiPadding = styled.li`
   @media screen and (min-width: 768px) {
     position: absolute;
     :nth-child(1) {
-      left: 25px;
+      left: 45px;
     }
     :nth-child(2) {
-      left: 140px;
+      left: 160px;
     }
     :nth-child(3) {
-      right: 15px;
+      right: 40px;
     }
   }
 `;

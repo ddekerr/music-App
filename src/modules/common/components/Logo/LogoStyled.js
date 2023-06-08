@@ -5,6 +5,7 @@ export const LogoContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding-top: 10px;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -12,6 +13,7 @@ export const LogoContainer = styled.div`
     align-items: center;
     width: 100%;
     position: absolute;
+    padding-top: 10px;
   }
 `;
 
