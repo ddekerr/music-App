@@ -1,19 +1,20 @@
 import { Box, Text } from 'modules/common';
-import { ChooseChord } from './EditableTextBlock.styled';
+// import { ChooseChord } from './EditableTextBlock.styled';
 import { nanoid } from 'nanoid';
 
 export const EditableTextBlock = ({ field, handleClick }) => {
   return (
     <>
-      <Text>{field.name}</Text>
-      <a href="#" name={field.name} onClick={handleClick}>
-        {field.value.split('\n').map(string => (
-          <Box key={nanoid()}>
-            <ChooseChord type='button'>+</ChooseChord>
-            <Text color="white">{string}</Text>
-          </Box>
-        ))}
-      </a>
+      {field.value.split('\n').map(string => (
+        <Box key={nanoid()}>
+          {/* <ChooseChord type="button">+</ChooseChord> */}
+          <pre>
+            <Text color="white" data-name={field.name} onClick={handleClick}>
+              {string}
+            </Text>
+          </pre>
+        </Box>
+      ))}
     </>
   );
 };

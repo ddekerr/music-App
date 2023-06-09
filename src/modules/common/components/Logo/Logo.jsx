@@ -1,10 +1,10 @@
 import LogoIMG from '../../../../image/pngwing.com.png';
-import { LogoContainer, LogoStyle } from './LogoStyled';
+import { LogoContainer } from './LogoStyled';
 
 const Logo = () => {
   return (
-    <LogoContainer>
-      <LogoStyle src={LogoIMG} />
+    <LogoContainer to="/">
+      <img src={LogoIMG} alt="Logo" />
     </LogoContainer>
   );
 };

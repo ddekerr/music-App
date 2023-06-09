@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { flexbox } from 'styled-system';
+import { flexbox, layout } from 'styled-system';
 
 const Flex = styled.div`
   ${flexbox}
+  ${layout}
 `;
 
 export default Flex;

@@ -30,7 +30,7 @@ export const UserImageUploadContainer = styled.img`
   width: 100%;
 `;
 
-// export const InputField = styled(Field)``;
+export const InputField = styled.input``;
 
 export const AddButton = styled.button`
   margin-right: 10px;

@@ -1,5 +1,5 @@
 import { TextArea } from './TextAreaBlock.styled';
-import { Box, Text } from 'modules/common';
+import { Box } from 'modules/common';
 
 export const TextAreaBlock = ({
   index,
@@ -9,16 +9,15 @@ export const TextAreaBlock = ({
   field,
 }) => {
   return (
-    <Box mt={2}>
-      <Text color="white">{field.name.toUpperCase()}</Text>
+    <Box>
       <TextArea
         name={field.name}
         value={field.value}
         onChange={evt => handleChange(index, evt)}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        autoFocus={true}
       ></TextArea>
-      <a href="#">Add</a>
     </Box>
   );
 };

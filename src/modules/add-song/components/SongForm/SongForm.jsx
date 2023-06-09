@@ -3,6 +3,7 @@ import {
   UserImageUploadInput,
   UserImageUploadLabel,
   UserImageUploadContainer,
+  InputField,
   AddButton,
   Submit,
 } from './SongForm.styled';
@@ -11,9 +12,10 @@ import userImageDefault from '../../../../image/add-image.png';
 import { EditableTextBlock, TextAreaBlock } from '..';
 import { partOfSongList } from 'constants';
 import { nanoid } from 'nanoid';
+import { IoMdArrowDropdown } from 'react-icons/io';
 
 const SongForm = () => {
-  const [uploadedImage, setUploadedImage] = useState(null);
+  // const [uploadedImage, setUploadedImage] = useState(null);
   const [isVisualAddList, setIsVisualAddList] = useState(false);
   const [fields, setFields] = useState([]);
   const [focusField, setFocusField] = useState('');
@@ -42,7 +44,7 @@ const SongForm = () => {
 
   const handleClick = evt => {
     evt.preventDefault();
-    setFocusField(evt.currentTarget.name);
+    setFocusField(evt.currentTarget.dataset.name);
   };
 
   return (
@@ -50,9 +52,9 @@ const SongForm = () => {
       {/* HEADER BLOCK */}
       <Box display="flex">
         <UserImageUploadLabel htmlFor="file">
-          <UserImageUploadContainer src={uploadedImage || userImageDefault} />
+          {/* <UserImageUploadContainer src={uploadedImage || userImageDefault} /> */}
+          <UserImageUploadContainer src={userImageDefault} />
           <UserImageUploadInput type="file" name="file" id="file" />
-          {/* <input type="file" name="file" id="file" /> */}
         </UserImageUploadLabel>
         <Box
           display="flex"
@@ -60,23 +62,29 @@ const SongForm = () => {
           justifyContent="space-evenly"
           width={0}
         >
-          <input type="text" name="title" id="title" />
-          <input type="text" name="author" id="author" />
+          <InputField type="text" name="title" id="title" />
+          <InputField type="text" name="author" id="author" />
         </Box>
       </Box>
 
       {/* ADD BUTTONS BLOCK */}
-      <Box display="flex" alignItems="center" justifyContent="flex-end">
+      <Box display="flex" alignItems="center" justifyContent="flex-start">
         <AddButton type="button">Add MP4</AddButton>
         <AddButton type="button">Add MP3</AddButton>
-        <Box flexGrow="1" position="relative">
+        <Box
+          display="flex"
+          justifyContent="flex-end"
+          alignItems="center"
+          position="relative"
+        >
           <Text
             color="white"
             style={{ cursor: 'pointer' }}
             onClick={() => setIsVisualAddList(true)}
           >
-            Add
+            Add Verse
           </Text>
+          {/* <IoMdArrowDropdown style={{fill: "#fff"}} /> */}
           <Box
             as="ul"
             position="absolute"
@@ -95,7 +103,8 @@ const SongForm = () => {
 
       {/* TEXT BLOCK */}
       {fields.map((field, index) => (
-        <Box key={index}>
+        <Box key={index} mt={2}>
+          <Text color="white">{field.name.toUpperCase()}</Text>
           {(field.name === focusField || field.value === '') && (
             <TextAreaBlock
               index={index}
@@ -113,7 +122,7 @@ const SongForm = () => {
       ))}
 
       <Box display="flex" justifyContent="flex-end">
-        <Submit>Save</Submit>
+        <Submit type="submit">Save</Submit>
       </Box>
     </form>
   );

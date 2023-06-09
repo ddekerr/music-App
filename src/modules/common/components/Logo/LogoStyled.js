@@ -1,22 +1,15 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const LogoContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding-top: 10px;
+export const LogoContainer = styled(NavLink)`
+  display: block;
+  width: 120px;
+  margin: 0 auto;
 
-  @media screen and (min-width: 768px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  @media screen and (min-width: 576px) {
     position: absolute;
-    padding-top: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
-`;
-
-export const LogoStyle = styled.img`
-  height: 80px;
 `;

@@ -1,14 +1,14 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Flex, Menu, Logo } from 'modules/common';
+import { Menu, Logo, Header } from 'modules/common';
 
 const MainLayout = () => {
   return (
     <>
-      <Flex>
+      <Header>
         <Logo />
         <Menu />
-      </Flex>
+      </Header>
 
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />

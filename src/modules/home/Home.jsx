@@ -1,5 +1,5 @@
 // import { TitleList } from './Home.styled';
-import { Main, Header, Filter } from 'modules/common';
+import { Main, Filter } from 'modules/common';
 import TileList from './components/TileList';
 
 import { useDispatch } from 'react-redux';
@@ -17,17 +17,11 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <Header>
-        {/* <TitleList>Worship Songs</TitleList> */}
-        <Filter />
-      </Header>
-
-      <Main>
-        {isLoading && <Puff />}
-        {songs.length > 0 && <TileList songs={songs} />}
-      </Main>
-    </>
+    <Main>
+      <Filter />
+      {isLoading && <Puff />}
+      {songs.length > 0 && <TileList songs={songs} />}
+    </Main>
   );
 };
 

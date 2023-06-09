@@ -1,16 +1,19 @@
 import { nanoid } from 'nanoid';
-import { MenuContainer, MenuList, MenuLink, MenuText, LiPadding } from './Menu.styled';
+import { MenuContainer, MenuList, MenuLink, LiPadding } from './Menu.styled';
 import { mainMenuList } from 'constants';
+import { Text } from 'modules/common';
 
 const Menu = () => {
   return (
     <MenuContainer>
-      <MenuList className="container">
+      <MenuList>
         {mainMenuList.map(({ href, text, icon: MenuIcon }) => (
           <LiPadding key={nanoid()}>
             <MenuLink to={href}>
               <MenuIcon className="icon" />
-              <MenuText>{text}</MenuText>
+              <Text fontSize={{ _: 0, sm: 2 }} lineGeight={{ _: 0, sm: 1 }}>
+                {text}
+              </Text>
             </MenuLink>
           </LiPadding>
         ))}
