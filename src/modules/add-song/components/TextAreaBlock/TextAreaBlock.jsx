@@ -6,13 +6,13 @@ export const TextAreaBlock = ({
   handleChange,
   handleFocus,
   handleBlur,
-  field,
+  block,
 }) => {
   return (
     <Box>
       <TextArea
-        name={field.name}
-        value={field.value}
+        name={block.block_title}
+        value={block.block_text}
         onChange={evt => handleChange(index, evt)}
         onFocus={handleFocus}
         onBlur={handleBlur}

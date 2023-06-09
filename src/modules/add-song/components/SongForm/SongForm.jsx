@@ -14,22 +14,38 @@ import { partOfSongList } from 'constants';
 import { nanoid } from 'nanoid';
 import { IoMdArrowDropdown } from 'react-icons/io';
 
+const initialValues = {
+  title: '',
+  author: '',
+  genres: [],
+  path_to_song: '',
+  path_to_video: '',
+  path_to_img: '',
+  text: [],
+  chords: [],
+};
+
 const SongForm = () => {
   // const [uploadedImage, setUploadedImage] = useState(null);
   const [isVisualAddList, setIsVisualAddList] = useState(false);
-  const [fields, setFields] = useState([]);
+  // const [fields, setFields] = useState([]);
+  const [fields, setFields] = useState(initialValues);
   const [focusField, setFocusField] = useState('');
 
   const selectOption = evt => {
     let { innerText } = evt.target;
-    const includes = fields.reduce(
+    const includes = fields.text.reduce(
       (acc, field) => (field.name.includes(innerText) ? acc + 1 : acc),
       0
     );
 
     if (includes > 0) innerText += includes;
-    let data = [...fields, { name: innerText, value: '' }];
-    data[innerText] = '';
+    // let data = [...fields, { name: innerText, value: '' }];
+    let data = {
+      ...fields,
+      text: [...fields.text, { block_title: innerText, block_text: '' }],
+    };
+    // data[innerText] = '';
     setFields(data);
 
     setIsVisualAddList(false);
@@ -37,8 +53,10 @@ const SongForm = () => {
 
   const handleChange = (index, evt) => {
     const { value } = evt.target;
-    let data = [...fields];
-    data[index].value = value;
+    // let data = [...fields];
+    let data = { ...fields };
+    // data[index].value = value;
+    data.text[index].block_text = value;
     setFields(data);
   };
 
@@ -47,8 +65,19 @@ const SongForm = () => {
     setFocusField(evt.currentTarget.dataset.name);
   };
 
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    const { title, author } = evt.target;
+    // console.dir({
+    //   title: title.value,
+    //   author: author.value,
+    //   is_public: false,
+    //   is_moderate: false,
+    // });
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       {/* HEADER BLOCK */}
       <Box display="flex">
         <UserImageUploadLabel htmlFor="file">
@@ -102,21 +131,21 @@ const SongForm = () => {
       </Box>
 
       {/* TEXT BLOCK */}
-      {fields.map((field, index) => (
+      {fields.text.map((block, index) => (
         <Box key={index} mt={2}>
-          <Text color="white">{field.name.toUpperCase()}</Text>
-          {(field.name === focusField || field.value === '') && (
+          <Text color="white">{block.block_title.toUpperCase()}</Text>
+          {(block.block_title === focusField || block.block_text === '') && (
             <TextAreaBlock
               index={index}
               handleChange={handleChange}
               handleFocus={evt => setFocusField(evt.target.name)}
               handleBlur={() => setFocusField('')}
-              field={field}
+              block={block}
             />
           )}
 
-          {field.name !== focusField && field.value !== '' && (
-            <EditableTextBlock field={field} handleClick={handleClick} />
+          {block.block_title !== focusField && block.block_text !== '' && (
+            <EditableTextBlock block={block} handleClick={handleClick} />
           )}
         </Box>
       ))}
