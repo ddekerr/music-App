@@ -24,12 +24,3 @@ export const EditableTextBlock = ({ block, handleClick }) => {
 };
 
 export default EditableTextBlock;
-
-/* <ChooseChord>+</ChooseChord>
-        <Text color="white">Втомлена від боротьби</Text>
-
-        <ChooseChord>+</ChooseChord>
-        <Text color="white">Зітхаємо у марноті</Text>
-
-        <ChooseChord>+</ChooseChord>
-        <Text color="white">Бо втратили ми Твій дотик</Text> */

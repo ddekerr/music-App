@@ -9,11 +9,15 @@ import {
   Submit,
 } from './SongForm.styled';
 import { Box, Text } from 'modules/common';
-import userImageDefault from '../../../../image/add-image.png';
-import { EditableTextBlock, TextAreaBlock } from '..';
+import userImageDefault from 'image/add-image.png';
+import {
+  EditableTextBlock,
+  TextAreaBlock,
+  SongHeader,
+  ActionButtons,
+} from '..';
 import { partOfSongList } from 'constants';
 import { nanoid } from 'nanoid';
-import { IoMdArrowDropdown } from 'react-icons/io';
 import { useDispatch } from 'react-redux';
 import { addSong } from 'app/songs/operations';
 
@@ -31,14 +35,14 @@ const initialValues = {
 };
 
 const SongForm = () => {
-  // const [uploadedImage, setUploadedImage] = useState(null);
+  const [uploadedImage, setUploadedImage] = useState(null);
   const [isVisualAddList, setIsVisualAddList] = useState(false);
   const [fields, setFields] = useState(initialValues);
   const [focusField, setFocusField] = useState('');
   const dispatch = useDispatch();
 
   const selectOption = evt => {
-    let { innerText } = evt.target;
+    const { innerText } = evt.target;
     let data = {
       ...fields,
       text: [...fields.text, { block_title: innerText, block_text: '' }],
@@ -73,77 +77,16 @@ const SongForm = () => {
 
   return (
     <AddSongForm onSubmit={handleSubmit}>
-      {/* HEADER BLOCK */}
-      <Box display="flex">
-        <UserImageUploadLabel htmlFor="file">
-          {/* <UserImageUploadContainer src={uploadedImage || userImageDefault} /> */}
-          <UserImageUploadContainer src={userImageDefault} />
-          <UserImageUploadInput
-            type="file"
-            name="file"
-            id="file"
-            // onChange={handleChangeImg}
-          />
-        </UserImageUploadLabel>
-        <Box
-          display="flex"
-          flexDirection="column"
-          justifyContent="space-evenly"
-          width={0}
-        >
-          <InputField
-            type="text"
-            name="title"
-            id="title"
-            onChange={handleChangeInput}
-          />
-          <InputField
-            type="text"
-            name="author"
-            id="author"
-            onChange={handleChangeInput}
-          />
-        </Box>
-      </Box>
+      <SongHeader
+        image={uploadedImage || userImageDefault}
+        handleChange={handleChangeInput}
+      />
 
-      {/* ADD BUTTONS BLOCK */}
-      <Box display="flex" alignItems="center" justifyContent="flex-start">
-        <AddButton type="button">Add MP4</AddButton>
-        <AddButton type="button">Add MP3</AddButton>
-        <Box
-          display="flex"
-          justifyContent="flex-end"
-          alignItems="center"
-          position="relative"
-        >
-          <Text
-            color="white"
-            style={{ cursor: 'pointer' }}
-            onClick={() => setIsVisualAddList(true)}
-          >
-            Add Verse
-          </Text>
-          {/* <IoMdArrowDropdown style={{fill: "#fff"}} /> */}
-          <Box
-            as="ul"
-            position="absolute"
-            className={isVisualAddList ? '' : 'visually-hidden'}
-          >
-            {partOfSongList.map(part => (
-              <li key={nanoid()}>
-                <button
-                  as="button"
-                  type="button"
-                  name={part}
-                  onClick={selectOption}
-                >
-                  {part}
-                </button>
-              </li>
-            ))}
-          </Box>
-        </Box>
-      </Box>
+      <ActionButtons
+        selectOption={selectOption}
+        onClick={() => setIsVisualAddList(true)}
+        isVisual={isVisualAddList}
+      />
 
       {/* TEXT BLOCKS */}
       {fields.text.map((block, index) => (
