@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
-import {
-  AddSongForm,
-  UserImageUploadInput,
-  UserImageUploadLabel,
-  UserImageUploadContainer,
-  InputField,
-  AddButton,
-  Submit,
-} from './SongForm.styled';
+import { useDispatch } from 'react-redux';
+import { addSong } from 'app/songs/operations';
+
+import { AddSongForm, Submit } from './SongForm.styled';
 import { Box, Text } from 'modules/common';
 import userImageDefault from 'image/add-image.png';
 import {
@@ -16,10 +11,6 @@ import {
   SongHeader,
   ActionButtons,
 } from '..';
-import { partOfSongList } from 'constants';
-import { nanoid } from 'nanoid';
-import { useDispatch } from 'react-redux';
-import { addSong } from 'app/songs/operations';
 
 const initialValues = {
   is_public: false,
@@ -27,9 +18,9 @@ const initialValues = {
   title: '',
   author: '',
   genres: [],
-  path_to_song: '',
-  path_to_video: '',
-  path_to_img: '',
+  // path_to_song: '',
+  // path_to_video: '',
+  // path_to_img: '',
   text: [],
   chords: [],
 };
@@ -41,16 +32,28 @@ const SongForm = () => {
   const [focusField, setFocusField] = useState('');
   const dispatch = useDispatch();
 
+  // Clicking Action buttons option event
   const selectOption = evt => {
     const { innerText } = evt.target;
+
+    const includes = fields.text.reduce(
+      (result, block) =>
+        block.block_title.includes(innerText) ? (result += 1) : result,
+      1
+    );
+
     let data = {
       ...fields,
-      text: [...fields.text, { block_title: innerText, block_text: '' }],
+      text: [
+        ...fields.text,
+        { block_title: innerText + includes, block_text: '' },
+      ],
     };
     setFields(data);
     setIsVisualAddList(false);
   };
 
+  // Change all inputs event
   const handleChangeInput = evt => {
     const { name, value } = evt.target;
     let data = { ...fields };
@@ -58,6 +61,7 @@ const SongForm = () => {
     setFields(data);
   };
 
+  // Change all textareas event
   const handleChangeTextArea = (index, evt) => {
     const { value } = evt.target;
     let data = { ...fields };
@@ -65,11 +69,13 @@ const SongForm = () => {
     setFields(data);
   };
 
+  // Click on textarea event
   const handleClick = evt => {
     evt.preventDefault();
     setFocusField(evt.currentTarget.dataset.name);
   };
 
+  //Submit form
   const handleSubmit = evt => {
     evt.preventDefault();
     dispatch(addSong(fields));
