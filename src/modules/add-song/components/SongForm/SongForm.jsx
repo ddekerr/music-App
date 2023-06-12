@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+  AddSongForm,
   UserImageUploadInput,
   UserImageUploadLabel,
   UserImageUploadContainer,
@@ -13,8 +14,12 @@ import { EditableTextBlock, TextAreaBlock } from '..';
 import { partOfSongList } from 'constants';
 import { nanoid } from 'nanoid';
 import { IoMdArrowDropdown } from 'react-icons/io';
+import { useDispatch } from 'react-redux';
+import { addSong } from 'app/songs/operations';
 
 const initialValues = {
+  is_public: false,
+  is_moderate: false,
   title: '',
   author: '',
   genres: [],
@@ -28,34 +33,30 @@ const initialValues = {
 const SongForm = () => {
   // const [uploadedImage, setUploadedImage] = useState(null);
   const [isVisualAddList, setIsVisualAddList] = useState(false);
-  // const [fields, setFields] = useState([]);
   const [fields, setFields] = useState(initialValues);
   const [focusField, setFocusField] = useState('');
+  const dispatch = useDispatch();
 
   const selectOption = evt => {
     let { innerText } = evt.target;
-    const includes = fields.text.reduce(
-      (acc, field) => (field.name.includes(innerText) ? acc + 1 : acc),
-      0
-    );
-
-    if (includes > 0) innerText += includes;
-    // let data = [...fields, { name: innerText, value: '' }];
     let data = {
       ...fields,
       text: [...fields.text, { block_title: innerText, block_text: '' }],
     };
-    // data[innerText] = '';
     setFields(data);
-
     setIsVisualAddList(false);
   };
 
-  const handleChange = (index, evt) => {
-    const { value } = evt.target;
-    // let data = [...fields];
+  const handleChangeInput = evt => {
+    const { name, value } = evt.target;
     let data = { ...fields };
-    // data[index].value = value;
+    data[name] = value;
+    setFields(data);
+  };
+
+  const handleChangeTextArea = (index, evt) => {
+    const { value } = evt.target;
+    let data = { ...fields };
     data.text[index].block_text = value;
     setFields(data);
   };
@@ -67,23 +68,22 @@ const SongForm = () => {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    const { title, author } = evt.target;
-    // console.dir({
-    //   title: title.value,
-    //   author: author.value,
-    //   is_public: false,
-    //   is_moderate: false,
-    // });
+    dispatch(addSong(fields));
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <AddSongForm onSubmit={handleSubmit}>
       {/* HEADER BLOCK */}
       <Box display="flex">
         <UserImageUploadLabel htmlFor="file">
           {/* <UserImageUploadContainer src={uploadedImage || userImageDefault} /> */}
           <UserImageUploadContainer src={userImageDefault} />
-          <UserImageUploadInput type="file" name="file" id="file" />
+          <UserImageUploadInput
+            type="file"
+            name="file"
+            id="file"
+            // onChange={handleChangeImg}
+          />
         </UserImageUploadLabel>
         <Box
           display="flex"
@@ -91,8 +91,18 @@ const SongForm = () => {
           justifyContent="space-evenly"
           width={0}
         >
-          <InputField type="text" name="title" id="title" />
-          <InputField type="text" name="author" id="author" />
+          <InputField
+            type="text"
+            name="title"
+            id="title"
+            onChange={handleChangeInput}
+          />
+          <InputField
+            type="text"
+            name="author"
+            id="author"
+            onChange={handleChangeInput}
+          />
         </Box>
       </Box>
 
@@ -121,7 +131,12 @@ const SongForm = () => {
           >
             {partOfSongList.map(part => (
               <li key={nanoid()}>
-                <button type="button" name={part} onClick={selectOption}>
+                <button
+                  as="button"
+                  type="button"
+                  name={part}
+                  onClick={selectOption}
+                >
                   {part}
                 </button>
               </li>
@@ -130,14 +145,14 @@ const SongForm = () => {
         </Box>
       </Box>
 
-      {/* TEXT BLOCK */}
+      {/* TEXT BLOCKS */}
       {fields.text.map((block, index) => (
         <Box key={index} mt={2}>
           <Text color="white">{block.block_title.toUpperCase()}</Text>
           {(block.block_title === focusField || block.block_text === '') && (
             <TextAreaBlock
               index={index}
-              handleChange={handleChange}
+              handleChange={handleChangeTextArea}
               handleFocus={evt => setFocusField(evt.target.name)}
               handleBlur={() => setFocusField('')}
               block={block}
@@ -153,7 +168,7 @@ const SongForm = () => {
       <Box display="flex" justifyContent="flex-end">
         <Submit type="submit">Save</Submit>
       </Box>
-    </form>
+    </AddSongForm>
   );
 };
 

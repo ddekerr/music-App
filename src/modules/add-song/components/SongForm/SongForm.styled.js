@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Field, Form } from 'formik';
 
 export const AddSongForm = styled.form``;
 
@@ -36,11 +35,6 @@ export const AddButton = styled.button`
   margin-right: 10px;
   border-radius: 30px;
   padding: 2px 7px;
-`;
-
-export const AddTextAreaButton = styled.select`
-  flex-grow: 1;
-  margin-top: 15px;
 `;
 
 export const Submit = styled.button`
