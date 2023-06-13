@@ -2,6 +2,7 @@ const theme = {
   colors: {
     black: '#000',
     btn: '#505050',
+    text: '#afafaf',
   },
 
   space: [0, 4, 16, 32, 64],

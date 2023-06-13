@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addSong } from 'app/songs/operations';
 
-import { AddSongForm, Submit } from './SongForm.styled';
-import { Box, Text } from 'modules/common';
+import { AddSongForm, Submit, Plug, TextBLockTitle } from './SongForm.styled';
+import { Box } from 'modules/common';
 import userImageDefault from 'image/add-image.png';
 import {
   EditableTextBlock,
@@ -81,6 +81,15 @@ const SongForm = () => {
     dispatch(addSong(fields));
   };
 
+  // Delete block of text event
+  const handleDelete = evt => {
+    evt.preventDefault();
+    const { index } = evt.target.dataset;
+    let textFields = [...fields.text];
+    textFields.splice(index, 1);
+    setFields({ ...fields, text: textFields });
+  };
+
   return (
     <AddSongForm onSubmit={handleSubmit}>
       <SongHeader
@@ -94,10 +103,17 @@ const SongForm = () => {
         isVisual={isVisualAddList}
       />
 
+      {fields.text.length === 0 && <Plug>Please add your first verse...</Plug>}
+
       {/* TEXT BLOCKS */}
       {fields.text.map((block, index) => (
-        <Box key={index} mt={2}>
-          <Text color="white">{block.block_title.toUpperCase()}</Text>
+        <Box key={index} mt={2} position="relative">
+          <TextBLockTitle>
+            <span className="front">{block.block_title.toUpperCase()}</span>
+            <span className="back" data-index={index} onClick={handleDelete}>
+              DELETE
+            </span>
+          </TextBLockTitle>
           {(block.block_title === focusField || block.block_text === '') && (
             <TextAreaBlock
               index={index}
@@ -114,9 +130,20 @@ const SongForm = () => {
         </Box>
       ))}
 
-      <Box display="flex" justifyContent="flex-end">
-        <Submit type="submit">Save</Submit>
-      </Box>
+      {fields.text.length !== 0 && (
+        <Box display="flex" justifyContent="flex-end">
+          <Submit
+            type="submit"
+            disabled={
+              fields.text.every(e => e.block_text === '') || fields.title === ''
+                ? true
+                : false
+            }
+          >
+            Save
+          </Submit>
+        </Box>
+      )}
     </AddSongForm>
   );
 };

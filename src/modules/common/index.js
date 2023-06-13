@@ -16,3 +16,6 @@ export { default as Flex } from './components/Box/Flex';
 // common Routes
 export { default as PrivateRoute } from './components/Routes/PrivateRoute';
 export { default as RestrictedRoute } from './components/Routes/RestrictedRoute';
+
+// common styles
+export { Button, Input, Textarea } from './components/Styles/Form.styled';
