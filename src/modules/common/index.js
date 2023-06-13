@@ -18,4 +18,9 @@ export { default as PrivateRoute } from './components/Routes/PrivateRoute';
 export { default as RestrictedRoute } from './components/Routes/RestrictedRoute';
 
 // common styles
-export { Button, Input, Textarea } from './components/Styles/Form.styled';
+export {
+  Button,
+  Input,
+  Textarea,
+  Checkbox,
+} from './components/Styles/Form.styled';

@@ -1,7 +1,13 @@
 import styled from 'styled-components';
-import { Button } from 'modules/common';
+import { Button, Checkbox } from 'modules/common';
 
 export const AddSongForm = styled.form``;
+
+export const Public = styled(Checkbox)`
+  & + label {
+    margin-right: 20px;
+  }
+`;
 
 export const Submit = styled(Button)`
   width: 100%;

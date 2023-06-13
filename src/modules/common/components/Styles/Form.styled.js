@@ -18,7 +18,7 @@ export const Button = styled.button`
   :not(:disabled):hover,
   :not(:disabled):focus {
     background-color: hsl(0, 7%, 20%);
-    transform: scale(1.02);
+    transform: scale(1.05);
   }
 
   :disabled {
@@ -45,7 +45,7 @@ export const Input = styled.input`
 
   :focus {
     background-color: hsl(0, 7%, 20%);
-    transform: scale(1.02);
+    transform: scale(1.05);
   }
 `;
 
@@ -65,5 +65,34 @@ export const Textarea = styled.textarea`
 
   :focus {
     background-color: hsl(0, 7%, 20%);
+  }
+`;
+
+export const Checkbox = styled.input`
+  & + label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    padding: 10px;
+    border: 1px solid hsl(0, 0%, 20%);
+    border-radius: 0.5em;
+
+    font-size: 18px;
+    text-transform: capitalize;
+
+    background-color: hsl(0, 0%, 25%);
+    color: ${p => p.theme.colors.text};
+    cursor: pointer;
+
+    transition: transform 500ms ease-in-out;
+  }
+
+  :hover + label {
+    transform: scale(1.05);
+  }
+
+  &:checked + label {
+    border-color: ${p => p.theme.colors.checked};
+    background-color: ${p => p.theme.colors.checked};
   }
 `;

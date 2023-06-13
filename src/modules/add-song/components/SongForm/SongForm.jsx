@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addSong } from 'app/songs/operations';
-
-import { AddSongForm, Submit, Plug, TextBLockTitle } from './SongForm.styled';
 import { Box } from 'modules/common';
 import userImageDefault from 'image/add-image.png';
 import {
@@ -12,6 +10,13 @@ import {
   ActionButtons,
   Genres,
 } from '..';
+import {
+  AddSongForm,
+  Submit,
+  Plug,
+  TextBLockTitle,
+  Public,
+} from './SongForm.styled';
 
 const initialValues = {
   is_public: false,
@@ -98,6 +103,15 @@ const SongForm = () => {
     setFields(data);
   };
 
+  const handlePublic = evt => {
+    const { checked } = evt.target;
+    let data = { ...fields };
+    if (checked) data.is_public = true;
+    if (!checked) data.is_public = false;
+
+    setFields(data);
+  };
+
   // Delete block of text event
   const handleDelete = evt => {
     evt.preventDefault();
@@ -126,7 +140,7 @@ const SongForm = () => {
 
       {/* TEXT BLOCKS */}
       {fields.text.map((block, index) => (
-        <Box key={index} mt={2} position="relative">
+        <Box key={index} mt={3} position="relative">
           <TextBLockTitle>
             <span className="front">{block.block_title.toUpperCase()}</span>
             <span className="back" data-index={index} onClick={handleDelete}>
@@ -151,6 +165,14 @@ const SongForm = () => {
 
       {fields.text.length !== 0 && (
         <Box display="flex" justifyContent="flex-end">
+          <Public
+            className="visually-hidden"
+            type="checkbox"
+            id="is_public"
+            name="is_public"
+            onChange={handlePublic}
+          />
+          <label htmlFor="is_public">Public</label>
           <Submit
             type="submit"
             disabled={
