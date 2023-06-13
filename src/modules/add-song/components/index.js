@@ -3,3 +3,4 @@ export { default as EditableTextBlock } from './EditableTextBlock/EditableTextBl
 export { default as TextAreaBlock } from './TextAreaBlock/TextAreaBlock';
 export { default as SongHeader } from './SongHeader/SongHeader';
 export { default as ActionButtons } from './ActionButtons/ActionButtons';
+export { default as Genres } from './Genres/Genres';

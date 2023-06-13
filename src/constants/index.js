@@ -3,3 +3,4 @@ export { mainMenuList } from './mainMenuList';
 export { registrationList } from './registrationList';
 export { userActionList } from './userActionList';
 export { partOfSongList } from './partOfSongList';
+export { genresList } from './genresList';

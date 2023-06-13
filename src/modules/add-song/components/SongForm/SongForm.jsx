@@ -10,6 +10,7 @@ import {
   TextAreaBlock,
   SongHeader,
   ActionButtons,
+  Genres,
 } from '..';
 
 const initialValues = {
@@ -81,6 +82,22 @@ const SongForm = () => {
     dispatch(addSong(fields));
   };
 
+  // Checkbox change event
+  const handleCheckbox = evt => {
+    const { name, value, checked } = evt.target;
+    let data = { ...fields };
+
+    if (checked && !data[name].includes(value)) {
+      data[name].push(value);
+    }
+
+    if (!checked && data[name].includes(value)) {
+      data[name].splice(value, 1);
+    }
+
+    setFields(data);
+  };
+
   // Delete block of text event
   const handleDelete = evt => {
     evt.preventDefault();
@@ -102,6 +119,8 @@ const SongForm = () => {
         onClick={() => setIsVisualAddList(true)}
         isVisual={isVisualAddList}
       />
+
+      <Genres handleCheckbox={handleCheckbox} checkedGenres={fields.genres} />
 
       {fields.text.length === 0 && <Plug>Please add your first verse...</Plug>}
 

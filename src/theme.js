@@ -3,6 +3,7 @@ const theme = {
     black: '#000',
     btn: '#505050',
     text: '#afafaf',
+    checked: '#035',
   },
 
   space: [0, 4, 16, 32, 64],
