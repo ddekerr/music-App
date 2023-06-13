@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Checkbox } from 'modules/common';
 
-export const GenreInput = styled.input`
+export const GenreInput = styled(Checkbox)`
   & + label {
     display: inline-flex;
     align-items: center;

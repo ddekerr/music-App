@@ -89,18 +89,20 @@ const SongForm = () => {
 
   // Checkbox change event
   const handleCheckbox = evt => {
-    const { name, value, checked } = evt.target;
+    const { value, checked } = evt.target;
     let data = { ...fields };
+    console.log(checked);
+    console.log(value);
 
-    if (checked && !data[name].includes(value)) {
-      data[name].push(value);
+    if (checked && !data.genres.includes(value)) {
+      data.genres.push(value);
+      setFields(data);
     }
 
-    if (!checked && data[name].includes(value)) {
-      data[name].splice(value, 1);
+    if (!checked && data.genres.includes(value)) {
+      const genres = data.genres.filter(g => g !== value);
+      setFields({ ...data, genres: [...genres] });
     }
-
-    setFields(data);
   };
 
   const handlePublic = evt => {
