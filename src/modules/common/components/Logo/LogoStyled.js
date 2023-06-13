@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const LogoContainer = styled(NavLink)`
   display: block;
   width: 120px;
-  margin: 0 auto;
+  margin: ${p => p.theme.space.center};
 
   @media screen and (min-width: 576px) {
     position: absolute;

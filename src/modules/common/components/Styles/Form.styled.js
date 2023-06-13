@@ -1,70 +1,70 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-  padding: 15px 10px;
-  border: 1px solid hsl(0, 0%, 10%);
+  padding: ${p => p.theme.space.sm} ${p => p.theme.space.inlg};
+  border: ${p => p.theme.borders.dark};
 
-  background-color: hsl(0, 0%, 14%);
-  color: #afafaf;
+  background-color: ${p => p.theme.colors.bg.main};
+  color: ${p => p.theme.colors.fields.text};
   outline: none;
 
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: ${p => p.theme.fontSizes.lg};
+  line-height: ${p => p.theme.lineHeights.normal};
 
   cursor: pointer;
-  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
-    transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+  transition: background-color ${p => p.theme.tr_duration} ease-in-out,
+    transform ${p => p.theme.tr_duration} ease-in-out;
 
   :not(:disabled):hover,
   :not(:disabled):focus {
-    background-color: hsl(0, 7%, 20%);
+    background-color: ${p => p.theme.colors.bg.disabled};
     transform: scale(1.05);
   }
 
   :disabled {
-    border: 1px solid hsl(0, 0%, 15%);
-    color: #4f4f4f;
+    border: none;
+    color: ${p => p.theme.colors.fields.disabled};
     cursor: auto;
   }
 `;
 
 export const Input = styled.input`
-  width: 100%;
-  padding: 15px 10px;
-  border: 1px solid hsl(0, 0%, 10%);
+  width: ${p => p.theme.sizes.full};
+  padding: ${p => p.theme.space.sm} ${p => p.theme.space.inlg};
+  border: ${p => p.theme.borders.dark};
 
-  background-color: hsl(0, 0%, 14%);
-  color: #afafaf;
+  background-color: ${p => p.theme.colors.bg.main};
+  color: ${p => p.theme.colors.fields.text};
   outline: none;
 
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: ${p => p.theme.fontSizes.lg};
+  line-height: ${p => p.theme.lineHeights.normal};
 
-  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
-    transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+  transition: background-color ${p => p.theme.tr_duration} ease-in-out,
+    transform ${p => p.theme.tr_duration} ease-in-out;
 
   :focus {
-    background-color: hsl(0, 7%, 20%);
+    background-color: ${p => p.theme.colors.bg.disabled};
     transform: scale(1.05);
   }
 `;
 
 export const Textarea = styled.textarea`
-  width: 100%;
-  padding: 15px 10px;
-  border: 1px solid hsl(0, 0%, 10%);
+  width: ${p => p.theme.sizes.full};
+  padding: ${p => p.theme.space.sm} ${p => p.theme.space.inlg};
+  border: ${p => p.theme.borders.dark};
 
-  background-color: hsl(0, 0%, 14%);
-  color: #afafaf;
+  background-color: ${p => p.theme.colors.bg.main};
+  color: ${p => p.theme.colors.fields.text};
   outline: none;
 
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: ${p => p.theme.fontSizes.lg};
+  line-height: ${p => p.theme.lineHeights.normal};
 
-  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+  transition: background-color ${p => p.theme.tr_duration} ease-in-out;
 
   :focus {
-    background-color: hsl(0, 7%, 20%);
+    background-color: ${p => p.theme.colors.bg.disabled};
   }
 `;
 
@@ -73,18 +73,19 @@ export const Checkbox = styled.input`
     display: inline-flex;
     align-items: center;
     user-select: none;
-    padding: 10px;
-    border: 1px solid hsl(0, 0%, 20%);
-    border-radius: 0.5em;
 
-    font-size: 18px;
+    padding: ${p => p.theme.space.sm};
+    border: ${p => p.theme.borders.checkbox};
+    border-radius: ${p => p.theme.radii.button};
+
+    font-size: ${p => p.theme.fontSizes.lg};
     text-transform: capitalize;
 
-    background-color: hsl(0, 0%, 25%);
+    background-color: ${p => p.theme.colors.bg.checkbox};
     color: ${p => p.theme.colors.text};
     cursor: pointer;
 
-    transition: transform 500ms ease-in-out;
+    transition: transform ${p => p.theme.colors.bg.disabled} ease-in-out;
   }
 
   :hover + label {
@@ -92,7 +93,7 @@ export const Checkbox = styled.input`
   }
 
   &:checked + label {
-    border-color: ${p => p.theme.colors.checked};
-    background-color: ${p => p.theme.colors.checked};
+    border-color: ${p => p.theme.colors.fields.checked};
+    background-color: ${p => p.theme.colors.fields.checked};
   }
 `;

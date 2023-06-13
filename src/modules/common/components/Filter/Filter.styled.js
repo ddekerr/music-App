@@ -2,15 +2,16 @@ import styled from 'styled-components';
 
 export const FilterItem = styled.li`
   :not(:last-of-type) {
-    margin-right: 25px;
+    margin-right: ${p => p.theme.space.md};
   }
 `;
 
 export const FilterButton = styled.button`
-  padding: 10px;
+  padding: ${p => p.theme.space.insm};
   border: 0;
-  border-radius: 10px;
+  border-radius: ${p => p.theme.radii.button};
 
-  background-color: #e5e5e5;
+  background-color: ${p => p.theme.colors.btn};
+  color: ${p => p.theme.colors.text};
   cursor: pointer;
 `;

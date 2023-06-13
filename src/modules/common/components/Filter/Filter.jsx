@@ -5,11 +5,11 @@ import { Flex, Text } from 'modules/common';
 
 const Filter = () => {
   return (
-    <Flex as="ul" display="flex" width={0}>
+    <Flex as="ul" display="flex" width="full">
       {filterList.map(filter => (
         <FilterItem key={nanoid()}>
           <FilterButton type="button" className="is-active">
-            <Text color="btn" fontSize={2} lineHeight={1}>
+            <Text color="btn" fontSize="lg" lineHeight="bigger">
               {filter}
             </Text>
           </FilterButton>

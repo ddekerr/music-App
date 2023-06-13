@@ -5,9 +5,9 @@ export const MenuContainer = styled.nav`
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: ${p => p.theme.sizes.full};
 
-  background-color: #000;
+  background-color: ${p => p.theme.colors.bg.main};
 
   @media screen and (min-width: 576px) {
     position: static;
@@ -19,14 +19,14 @@ export const MenuList = styled.ul`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 10px;
+  gap: ${p => p.theme.space.sm};
 
   @media screen and (min-width: 576px) {
     justify-content: flex-start;
   }
 `;
 
-export const LiPadding = styled.li`
+export const MenuItem = styled.li`
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -40,32 +40,32 @@ export const LiPadding = styled.li`
 export const MenuLink = styled(NavLink)`
   display: flex;
   flex-direction: column;
-  padding: 10px 20px;
-  gap: 5px;
+  padding: ${p => p.theme.space.inlg} ${p => p.theme.space.sm};
+  gap: ${p => p.theme.space.insm};
 
-  color: #fff;
+  color: ${p => p.theme.colors.text.white};
   cursor: pointer;
 
-  transition-duration: 500ms;
+  transition-duration: ${p => p.theme.tr_duration};
 
   :focus,
   :hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   @media screen and (min-width: 576px) {
     flex-direction: row;
     align-items: center;
-    padding: 10px;
+    padding: ${p => p.theme.space.sm};
   }
 `;
 
 export const MenuText = styled.p`
-  font-size: 10px;
-  line-height: 1.14;
+  font-size: ${p => p.theme.fontSizes.sm};
+  line-height: ${p => p.theme.lineHeights.normal};
 
   @media screen and (min-width: 576px) {
-    font-size: 18px;
-    line-height: 1.16;
+    font-size: ${p => p.theme.fontSizes.lg};
+    line-height: ${p => p.theme.lineHeights.bigger};
   }
 `;

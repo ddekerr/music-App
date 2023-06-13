@@ -3,7 +3,7 @@ import { Box } from 'modules/common';
 
 const Main = ({ children }) => {
   return (
-    <Box as="main" pb={{ _: 4, tablet: 0 }}>
+    <Box as="main" pb={{ _: 'sm', tablet: 'zero' }}>
       <div className="container">{children}</div>
     </Box>
   );

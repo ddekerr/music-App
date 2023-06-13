@@ -3,7 +3,7 @@ import { Box } from 'modules/common';
 
 const Header = ({ children }) => {
   return (
-    <Box as="header" pb={2} pt={2} mb={2} borderBottom={0} position="relative">
+    <Box as="header" py="sm" mb="sm" borderBottom="light" position="relative">
       <div className="container">{children}</div>
     </Box>
   );
