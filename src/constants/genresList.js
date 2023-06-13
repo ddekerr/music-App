@@ -1,1 +1,1 @@
-export const genresList = ['first', 'second', 'third', 'fourth'];
+export const genresList = ['Дитячі', 'Різдвяні', 'Пасхальні', 'Різні', 'День подяки', 'Для табору', 'Трійця', 'Хліболамання'];

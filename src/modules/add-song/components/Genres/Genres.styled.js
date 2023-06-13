@@ -6,9 +6,12 @@ export const GenreInput = styled(Checkbox)`
     display: inline-flex;
     align-items: center;
     user-select: none;
-    padding: 10px;
+    padding: 0 5px;
     border: 1px solid hsl(0, 0%, 20%);
     border-radius: 0.5em;
+    min-height: 50px;
+    text-align: center;
+
 
     font-size: 18px;
     text-transform: capitalize;
