@@ -1,10 +1,23 @@
 import { Box, Flex } from 'modules/common';
+import { AdminSidebar, AdminSheets } from './components';
+import { LogoLink, LogoPosition, ColorBack } from './Admin.styled';
+import { Logo } from 'modules/common';
 
 const Admin = () => {
   return (
-    <Flex display="flex">
-      <Box as="aside">Aside</Box>
-      <Box as="main">Main</Box>
+    <Flex display="inline">
+      <ColorBack>
+        <LogoLink href="#">
+          <LogoPosition>
+            <Logo />
+          </LogoPosition>
+        </LogoLink>
+
+        <AdminSidebar />
+      </ColorBack>
+      <Box as="main">
+        <AdminSheets />
+      </Box>
     </Flex>
   );
 };
