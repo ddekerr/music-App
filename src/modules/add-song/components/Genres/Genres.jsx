@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid';
 
 const Genres = ({ handleCheckbox, checkedGenres }) => {
   return (
-    <Box display="flex" flexDirection="row-reverse" overflowX="auto" height="50px" style={{ gap: '1em' }} mt={3}>
+    <Box display="flex" flexWrap='wrap' style={{ gap: '1em' }} mt={3}>
       {genresList.map(genre => (
         <Box key={nanoid()}>
           <GenreInput
