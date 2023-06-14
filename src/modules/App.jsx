@@ -11,6 +11,7 @@ const AuthPage = lazy(() => import('./auth/Auth'));
 const ProfilePage = lazy(() => import('./profile/Profile'));
 const AddSongPage = lazy(() => import('./add-song/AddSong'));
 const SongPage = lazy(() => import('./song/Song'));
+const AdminPage = lazy(() => import('./admin/Admin'));
 
 function App() {
   const dispatch = useDispatch();
@@ -51,6 +52,14 @@ function App() {
               </Suspense>
             }
           ></RestrictedRoute>
+        }
+      />
+      <Route
+        path="/admin"
+        element={
+          <Suspense fallback={<div>Loading...</div>}>
+            <AdminPage />
+          </Suspense>
         }
       />
     </Routes>
