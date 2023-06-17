@@ -5,7 +5,7 @@ import { Logo } from 'modules/common';
 
 const Admin = () => {
   return (
-    <Flex display="inline">
+    <Flex display="flex">
       <ColorBack>
         <LogoLink href="#">
           <LogoPosition>
